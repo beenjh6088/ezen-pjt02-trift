@@ -5,6 +5,7 @@ function init() {
   setData();
   includeHtml();
   setAbsLink();
+  makeEvents();
 }
 
 function setData() {
@@ -38,4 +39,30 @@ function setAbsLink() {
     let addr = url+val;
     link.setAttribute("href", addr);
   }); 
+}
+
+function makeEvents() {
+  const highmenus = document.querySelectorAll(".highmenu-item");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  highmenus.forEach(highmenu => {
+    highmenu.addEventListener("mouseover", function() {
+          // 모든 탭 콘텐츠 비활성화
+          tabContents.forEach(tc => tc.classList.remove("active"));
+
+          // 현재 탭과 연결된 콘텐츠 활성화
+          // console.log(document.getElementById(highmenu.dataset.tab))
+          let highmenu_item = document.getElementById(highmenu.dataset.tab);
+          if(highmenu_item != null) {
+            document.getElementById(highmenu.dataset.tab).classList.add("active");
+          }
+      });
+  });
+
+  tabContents.forEach(content => {
+      content.addEventListener("mouseleave", function() {
+          // 마우스가 탭 콘텐츠를 벗어나면 콘텐츠 비활성화
+          content.classList.remove("active");
+      });
+  });
 }

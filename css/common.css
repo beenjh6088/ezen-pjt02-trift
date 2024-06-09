@@ -26,22 +26,48 @@ body {
 /* gnb */
 .gnb {
   /* temp */
-  width: 50%;
-  border:1px dashed red;
-}
-.gnb .highmenus {
   width: 100%;
+  /* border:1px dashed red; */
+}
+
+
+.highmenus {
   display: flex;
+  background-color: #333;
+}
+
+.highmenu-item {
+  flex: 1;
+  padding: 16px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  background-color: #444;
+}
+
+.highmenu-item:hover {
+  background-color: #666;
+}
+
+.tab-content {
+  display: none;
+  border: 1px solid #ddd;
   position: relative;
-  border:1px dashed green;
 }
-.gnb .highmenus > li {
-  flex-grow: 1;
+
+.tab-content.active {
+  display: block;
 }
-.gnb .highmenus > li .middlemenus {
-  /* position: absolute; */
-  /* left: 0; */
-  /* top: 32px; */
-  float: left;
-  border:1px dashed blue;
+
+.middlemenu {
+  display: flex;
+}
+
+.middlemenu-item {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.middlemenu-item:hover {
+  background-color: #f0f0f0;
 }
