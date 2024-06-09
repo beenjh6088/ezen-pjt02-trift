@@ -16,3 +16,32 @@ body {
   font-size: 16px;
   color: #333;
 }
+.center {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+/* gnb */
+.gnb {
+  /* temp */
+  width: 50%;
+  border:1px dashed red;
+}
+.gnb .highmenus {
+  width: 100%;
+  display: flex;
+  position: relative;
+  border:1px dashed green;
+}
+.gnb .highmenus > li {
+  flex-grow: 1;
+}
+.gnb .highmenus > li .middlemenus {
+  /* position: absolute; */
+  /* left: 0; */
+  /* top: 32px; */
+  float: left;
+  border:1px dashed blue;
+}
