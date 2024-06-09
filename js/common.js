@@ -8,10 +8,13 @@ function init() {
   makeEvents();
 }
 
+
+// JSON 데이터 가져오기
 function setData() {
   bookarr = JSON.parse(JSON.stringify(BookObj)).books;
 }
 
+// 모듈화
 function includeHtml() {
   const includeTarget = document.querySelectorAll('.includeJs');
   includeTarget.forEach(function(el, idx) {
@@ -32,6 +35,7 @@ function includeHtml() {
   });
 };
 
+// link라는 클래스가 붙으면 절대경로로 넣어주기
 function setAbsLink() {
   links = document.querySelectorAll(".link");
   links.forEach(function(link, idx) {
@@ -41,28 +45,44 @@ function setAbsLink() {
   }); 
 }
 
+// 이벤트 넣어주기
 function makeEvents() {
-  const highmenus = document.querySelectorAll(".highmenu-item");
-  const tabContents = document.querySelectorAll(".tab-content");
+  const highMenus = document.querySelectorAll(".highmenu-item");
+  const midContents = document.querySelectorAll(".mid-content");
+  const midMenus = document.querySelectorAll(".middlemenu-item")
 
-  highmenus.forEach(highmenu => {
+  // highmenu-item mouseover 이벤트
+  highMenus.forEach(highmenu => {
     highmenu.addEventListener("mouseover", function() {
-          // 모든 탭 콘텐츠 비활성화
-          tabContents.forEach(tc => tc.classList.remove("active"));
+      // 모든 탭 콘텐츠 비활성화
+      midContents.forEach(tc => tc.classList.remove("active"));
 
-          // 현재 탭과 연결된 콘텐츠 활성화
-          // console.log(document.getElementById(highmenu.dataset.tab))
-          let highmenu_item = document.getElementById(highmenu.dataset.tab);
-          if(highmenu_item != null) {
-            document.getElementById(highmenu.dataset.tab).classList.add("active");
-          }
-      });
+      // 현재 탭과 연결된 콘텐츠 활성화
+      let highmenu_item = document.getElementById(highmenu.dataset.tab);
+      if(highmenu_item != null) {
+        document.getElementById(highmenu.dataset.tab).classList.add("active");
+      }
+    });
   });
 
-  tabContents.forEach(content => {
-      content.addEventListener("mouseleave", function() {
-          // 마우스가 탭 콘텐츠를 벗어나면 콘텐츠 비활성화
-          content.classList.remove("active");
-      });
+  // highmenu-item mouseleave 이벤트
+  midContents.forEach(content => {
+    content.addEventListener("mouseleave", function() {
+      // 마우스가 탭 콘텐츠를 벗어나면 콘텐츠 비활성화
+      content.classList.remove("active");
+    });
   });
+
+  // middlemenu-item mouseover 이벤트
+  midMenus.forEach(midMenu => {
+    midMenu.addEventListener("mouseover", function() {
+      // 모든 탭 콘텐츠 비활성화
+      midMenus.forEach(lc => lc.classList.remove("active"));
+
+      // 현재 탭과 연결된 콘텐츠 활성화
+      midMenu.classList.add("active")
+    })
+  })
+
+  // middlemenu-item mouseleave 이벤트
 }
