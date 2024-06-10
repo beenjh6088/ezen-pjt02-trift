@@ -47,11 +47,11 @@ function setAbsLink() {
 
 // 이벤트 넣어주기
 function makeEvents() {
-  const highMenus = document.querySelectorAll(".highmenu-item");
-  const midContents = document.querySelectorAll(".mid-content");
-  const midMenus = document.querySelectorAll(".middlemenu-item")
+  const highMenus = document.querySelectorAll(".highMenu-item");
+  const midContents = document.querySelectorAll(".midContent");
+  const midMenus = document.querySelectorAll(".middleMenu-item")
 
-  // highmenu-item mouseover 이벤트
+  // highMenu-item mouseover 이벤트
   highMenus.forEach(highmenu => {
     highmenu.addEventListener("mouseover", function() {
       // 모든 탭 콘텐츠 비활성화
@@ -65,7 +65,7 @@ function makeEvents() {
     });
   });
 
-  // highmenu-item mouseleave 이벤트
+  // highMenu-item mouseleave 이벤트
   midContents.forEach(content => {
     content.addEventListener("mouseleave", function() {
       // 마우스가 탭 콘텐츠를 벗어나면 콘텐츠 비활성화
@@ -73,7 +73,7 @@ function makeEvents() {
     });
   });
 
-  // middlemenu-item mouseover 이벤트
+  // middleMenu-item mouseover 이벤트
   midMenus.forEach(midMenu => {
     midMenu.addEventListener("mouseover", function() {
       // 모든 탭 콘텐츠 비활성화
@@ -84,5 +84,5 @@ function makeEvents() {
     })
   })
 
-  // middlemenu-item mouseleave 이벤트
+  // middleMenu-item mouseleave 이벤트
 }

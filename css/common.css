@@ -28,14 +28,14 @@ body {
 }
 
 
-.gnb .highmenus {
+.gnb .highMenus {
   display: flex;
 }
 
-.gnb .highmenus .highmenu-item {
+.gnb .highMenus .highMenu-item {
   flex: 1;
 }
-.gnb .highmenus .highmenu-item > a {
+.gnb .highMenus .highMenu-item > a {
   display: block;
   padding: 16px;
   text-align: center;
@@ -43,22 +43,22 @@ body {
   font-size: 19px;
   color: #333;
 }
-.gnb .highmenus .highmenu-item > a:hover {
+.gnb .highMenus .highMenu-item > a:hover {
   background-color: #fbfbfb;
 }
 
-.gnb .mid-content {
+.gnb .midContent {
   width: 100%;
   display: none;
   position: relative;
   /* border: 1px dashed red; */
 }
 
-.gnb .mid-content.active {
+.gnb .midContent.active {
   display: block;
 }
 
-.gnb .mid-content .middlemenus {
+.gnb .midContent .middleMenus {
   display: flex;
   width: 100%;
   position: absolute;
@@ -70,11 +70,11 @@ body {
   /* border: 1px dashed red;  */
 }
   
-.gnb .mid-content .middlemenus .middlemenu-item {
+.gnb .midContent .middleMenus .middleMenu-item {
   flex-grow: 1;
   /* border: 1px dashed green; */
 }
-.gnb .mid-content .middlemenus .middlemenu-item > a {
+.gnb .midContent .middleMenus .middleMenu-item > a {
   display: block;
   height: 50px;
   line-height: 50px;
@@ -82,11 +82,11 @@ body {
   color: #767379;
 }
 
-.gnb .mid-content .middlemenus .middlemenu-item > a:hover {
+.gnb .midContent .middleMenus .middleMenu-item > a:hover {
   font-weight: bold;
   color: #222;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody {
   position: absolute;
   left: 0;
   top: 51px;
@@ -98,22 +98,22 @@ body {
   height: 0;
   overflow: hidden;
 }
-.gnb .mid-content .middlemenus .middlemenu-item.active .low-content {
+.gnb .midContent .middleMenus .middleMenu-item.active .lowBody {
   z-index: 1;
   height: 504px;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowimage {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowImage {
   height: 100%;
   position: relative;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowimage img {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowImage img {
   display: block;
   width: 204px;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowimage .bgtext {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowImage .bgText {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -122,7 +122,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowimage .bgtext span {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowImage .bgText span {
   display: block;
   background-color: rgba(40,40,40,0.7);
   color: #EBEBEB;
@@ -131,7 +131,7 @@ body {
   padding: 8px 16px;
   text-align: center;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowcontents {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowContents {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
@@ -139,10 +139,10 @@ body {
   height: 100%;
   padding: 8px 32px;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowcontents .lowcontent {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowContents .lowContent {
   width: 221px;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowcontents .lowcontent .lowtitle p {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowContents .lowContent .lowTitle p {
   display: block;
   padding: 4px 0;
   font-size: 14px;
@@ -150,12 +150,12 @@ body {
   color: #B0B8BF;
   border-bottom: 1px solid #E9ECEF;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowcontents .lowcontent .lowmenus {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowContents .lowContent .lowMenus {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.gnb .mid-content .middlemenus .middlemenu-item .low-content .lowcontents .lowcontent .lowmenus .lowmenu-item a {
+.gnb .midContent .middleMenus .middleMenu-item .lowBody .lowContents .lowContent .lowMenus .lowMenu-item a {
   display: block;
   font-size: 14px;
   font-weight: normal;
