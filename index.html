@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trip as a Gift in your life</title>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/index.css">
-  <script src="json/book.json" ></script>
+  <script src="json/user.json" ></script>
   <script src="js/jquery-1.12.3.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
 	<link rel="icon" href="logo_trift.ico">
   <script>
     window.onload = function() {
@@ -26,29 +27,55 @@
       치익..여기는 HQ HQ. 슬라이드 개발 지원 요청바람.
     </div>
 
-    <div class="latest">
-      <div class="latest_container">
-        <div class="latest_container_title">
-          <p>최근 기록</p>
-        </div>
-        <div class="latest_container_cards">
-          <div class="card">
+    <div class="center">
+      <!-- 최근 기록 -->
+      <div class="latest">
+        <div class="latest_container">
+          <div class="latest_container_title">
+            <p>최근 기록</p>
           </div>
-          <div class="card">
-          </div>
-          <div class="card">
-          </div>
-          <div class="card">
-          </div>
-          <div class="card">
-          </div>
-          <div class="card">
-          </div>
-          <div class="card">
-          </div>
+          <ul class="cards ">
+            <li class="card">01</li>
+            <li class="card">02</li>
+            <li class="card">03</li>
+            <li class="card">04</li>
+            <li class="card">05</li>
+            <li class="card">06</li>
+            <li class="card">07</li>
+            <li class="card">08</li>
+            <li class="card">09</li>
+            <li class="card">10</li>
+            <li class="card">11</li>
+            <li class="card">12</li>
+          </ul>
         </div>
       </div>
+      <!-- // latest -->
+
+      <!-- 인기 기록 폴더 -->
+      <div class="popular">
+        <div class="popular_container">
+          <div class="popular_container_title">
+            <p>인기 기록 폴더</p>
+          </div>
+          <ul class="windowThumbnails">
+            <li class="windowThumbnail">01</li>
+            <li class="windowThumbnail">02</li>
+            <li class="windowThumbnail">03</li>
+            <li class="windowThumbnail">04</li>
+            <li class="windowThumbnail">05</li>
+            <li class="windowThumbnail">06</li>
+            <li class="windowThumbnail">07</li>
+            <li class="windowThumbnail">08</li>
+            <li class="windowThumbnail">09</li>
+            <li class="windowThumbnail">10</li>
+          </ul>
+        </div>
+      </div>
+       <!-- // popular -->
+
     </div>
+    <!-- // center -->
     
 		<!-- footer -->
 		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>

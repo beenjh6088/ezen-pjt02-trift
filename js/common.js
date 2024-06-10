@@ -1,17 +1,47 @@
-let bookarr = [];
-const url = `${window.location.protocol+"//"+window.location.host+"/"}`;
+/*
+***********************************************************************************************************************************************
+CREATION DATE : 2024.05.30
+CREATION USER : EZEN Laboratory Number 2 Trift 
+                JH.B : supporter for professionals
+                HJ.C : professional for rending
+                JS.C : professional for planning
+                KJ.L : professional for insight
+CREATION DESC : 
+                1) 
+                2) 
+                3) 
+                4) 
+------------------------------------------------------------------------------------------------------------------------------------------------
+REVISION DATE : 
+REVISION USER : 
+REVISION DESC :
+------------------------------------------------------------------------------------------------------------------------------------------------
+REVISION DATE : 
+REVISION USER : 
+REVISION DESC :  
+***********************************************************************************************************************************************
+*/
 
+let userArr = [];
+const url = `${window.location.protocol+"//"+window.location.host+"/"}`;
+let isLogin = (localStorage.getItem("isLogin") == null ) ? false : localStorage.getItem("isLogin");
+
+
+
+// 페이지 로드시 초기화 작업
 function init() {
   setData();
   includeHtml();
   setAbsLink();
   makeEvents();
+  putinCommon();
 }
+
 
 
 // JSON 데이터 가져오기
 function setData() {
-  bookarr = JSON.parse(JSON.stringify(BookObj)).books;
+  userArr = JSON.parse(JSON.stringify(UserObj)).users;
 }
 
 // 모듈화
@@ -45,13 +75,34 @@ function setAbsLink() {
   }); 
 }
 
+
+
+// 공통으로 관리할 변수 등록하기
+function putinCommon() {
+  // let strangers = document.querySelectorAll(".header_top_user .stranger");
+  // let members = document.querySelectorAll(".header_top_user .member");
+  // console.log(strangers)
+  // console.log(members)
+
+  // localStorage.setItem("strangers", strangers)
+  // localStorage.setItem("members", members);
+  // console.log(isLogin)
+  localStorage.setItem("isLogin", isLogin)
+}
+
 // 이벤트 넣어주기
 function makeEvents() {
-  const highMenus = document.querySelectorAll(".highMenu-item");
-  const midContents = document.querySelectorAll(".midContent");
-  const midMenus = document.querySelectorAll(".middleMenu-item")
+  toggleHoveringOnGnb();
+  letsMoveWithMouse();
+}
 
-  // highMenu-item mouseover 이벤트
+// Global Navigation Bar에 호버링 기능 부여
+function toggleHoveringOnGnb() {
+  const highMenus = document.querySelectorAll(".highMenus_item");
+  const midContents = document.querySelectorAll(".midContent");
+  const midMenus = document.querySelectorAll(".middleMenus_item")
+
+  // highMenus_item mouseover 이벤트
   highMenus.forEach(highmenu => {
     highmenu.addEventListener("mouseover", function() {
       // 모든 탭 콘텐츠 비활성화
@@ -65,7 +116,7 @@ function makeEvents() {
     });
   });
 
-  // highMenu-item mouseleave 이벤트
+  // highMenus_item mouseleave 이벤트
   midContents.forEach(content => {
     content.addEventListener("mouseleave", function() {
       // 마우스가 탭 콘텐츠를 벗어나면 콘텐츠 비활성화
@@ -73,7 +124,7 @@ function makeEvents() {
     });
   });
 
-  // middleMenu-item mouseover 이벤트
+  // middleMenus_item mouseover 이벤트
   midMenus.forEach(midMenu => {
     midMenu.addEventListener("mouseover", function() {
       // 모든 탭 콘텐츠 비활성화
@@ -83,6 +134,48 @@ function makeEvents() {
       midMenu.classList.add("active")
     })
   })
+}
 
-  // middleMenu-item mouseleave 이벤트
+
+// mousemove or drag 기능
+function letsMoveWithMouse() {
+  const cards = document.querySelector('.cards');
+  const cardDeck = document.querySelectorAll(".cards .card");
+
+  // 마우스 클릭 중인지 확인하는 변수
+  let isMouseDown = false;
+  let startX, scrollLeft;
+  
+  cards.addEventListener('mousedown', (e) => {
+    isMouseDown = true;
+    cardDeck.forEach(c => c.classList.remove("active"));
+    e.target.classList.add("active")
+    // 드래그를 시작한 지점의 x 좌표
+    startX = e.pageX - cards.offsetLeft;
+    // 현재 얼만큼 스크롤되었는지 변수
+    scrollLeft = cards.scrollLeft;
+  });
+  
+  cards.addEventListener('mouseleave', (e) => {
+    isMouseDown = false;
+    cardDeck.forEach(c => c.classList.remove("active"));
+  });
+  
+  cards.addEventListener('mouseup', (e) => {
+    isMouseDown = false;
+    cardDeck.forEach(c => c.classList.remove("active"));
+  });
+  
+  cards.addEventListener('mousemove', (e) => {
+    // 마우스 클릭이 아닐 떄는 실행 중지
+    if (!isMouseDown) return;
+  
+    // 이 함수의 정상적인 실행을 위해 HTML 태그의 내장 이벤트 중지
+    e.preventDefault();
+
+    // 마우스로 클릭한 시점부터 놓기까지의 거리만큼 스크롤로 이동하기
+    const x = e.pageX - cards.offsetLeft;
+    const walk = (x - startX) * 1;
+    cards.scrollLeft = scrollLeft - walk;
+  });
 }

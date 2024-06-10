@@ -21,42 +21,42 @@ REVISION USER :
 REVISION DESC :  
 ***********************************************************************************************************************************************
 */
-/* temp */
-.container > * {
-  border: 1px dashed #ddd;
+
+// 로그인 기능
+function login(e) {
+  e.preventDefault();
+  console.log("login");
+  // isLogin = true;
+  // localStorage.setItem("isLogin", true)
+  // let strangers = JSON.parse(localStorage.getItem("strangers"))
+
+  // console.log(strangers)
+  // console.log(typeof(strangers))
+
+  // isLogin = JSON.parse(localStorage.getItem("isLogin"))
+  // isLogin = true;
+  // console.log(isLogin)
+  localStorage.setItem("isLogin", true);
+  checkIsLogin()
+  location.href = url;
 }
 
-/* 
-slider
-*/
-.slider {
-  width: 100%;
-  height: 500px;
-  background-color: var(--subColor);
+// 로그아웃 기능
+function logout(e) {
+  e.preventDefault();
+  console.log("logout");
+  // isLogin = false;
+  localStorage.setItem("isLogin", false)
+  checkIsLogin()
 }
 
-
-/* 
-latest
-*/
-.latest {
-  width: 100%;
-  height: 662px;
-  border-bottom: 1px dashed red;
-}
-.latest .latest_container {
-  width: 100%;
-}
-.latest .latest_container .latest .latest_container_title {
-  width: 100%;
-}
-
-
-/* 
-popular
-*/
-.popular {
-  width: 100%;
-  height: 1219px;
-  border-bottom: 1px dashed red;
+function checkIsLogin() {
+  console.log(`stranger`)
+  let isLogin = localStorage.getItem("isLogin");
+  console.log(isLogin)
+  if(isLogin =="true") {
+    console.log("checkIsLogin login")
+  }else {
+    console.log("checkIsLogin logout")
+  }
 }
