@@ -42,18 +42,12 @@ function checkIsLogin() {
   members = document.querySelectorAll(".header_top_user .member");
   let isLogin = localStorage.getItem("isLogin");
   if(isLogin =="true") {
-    console.log("checkIsLogin login")
     // 로그인된 상태로 인한 stranger 은폐 및 member 표시
-    console.log(strangers);
-    console.log(members);
     strangers.forEach((s) => s.classList.remove("active"))
     members.forEach((m) => m.classList.add("active"))
     
   }else {
-    console.log("checkIsLogin logout")
     // 로그아웃된 상태로 인한 member 은폐 및 stranger 표시
-    console.log(members);
-    console.log(strangers);
     strangers.forEach((s) => s.classList.add("active"))
     members.forEach((m) => m.classList.remove("active"))
   }
