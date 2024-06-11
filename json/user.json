@@ -1,0 +1,11 @@
+UserObj = {
+  "users" : [
+    {"email":"supernova01@naver.com", "password":"1234", "name":"Novaberva", "gender":"M", "birthday":2002-02-02, "occupation":"jobless","address":"korea","doReceiveMail":true, "wishlist":[],"cartlist":[], "history":[]},
+    {"email":"supernova02@naver.com", "password":"1234", "name":"Sabin", "gender":"M", "birthday":1992-12-02, "occupation":"president","address":"nepal","doReceiveMail":true, "wishlist":[],"cartlist":[], "history":[]},
+    {"email":"supernova03@naver.com", "password":"1234", "name":"Henry", "gender":"M", "birthday":2002-02-02, "occupation":"driver","address":"malaysia","doReceiveMail":false, "wishlist":[],"cartlist":[], "history":[]},
+    {"email":"supernova04@naver.com", "password":"1234", "name":"Sun", "gender":"M", "birthday":1995-02-02, "occupation":"warrior","address":"japan","doReceiveMail":true, "wishlist":[],"cartlist":[], "history":[]},
+    {"email":"supernova05@naver.com", "password":"1234", "name":"Ivern", "gender":"M", "birthday":2012-02-02, "occupation":"restaurant owner","address":"columbia","doReceiveMail":true, "wishlist":[],"cartlist":[], "history":[]},
+    {"email":"supernova06@naver.com", "password":"1234", "name":"Kei", "gender":"F", "birthday":1995-02-02, "occupation":"teacher","address":"japan","doReceiveMail":false, "wishlist":[],"cartlist":[], "history":[]},
+    {"email":"supernova07@naver.com", "password":"1234", "name":"miki", "gender":"F", "birthday":1995-02-02, "occupation":"manager","address":"japan","doReceiveMail":false, "wishlist":[],"cartlist":[], "history":[]}
+  ]
+}
