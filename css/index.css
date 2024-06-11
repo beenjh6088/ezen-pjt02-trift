@@ -3,7 +3,7 @@
 CREATION DATE : 2024.06.10
 CREATION USER : EZEN Laboratory Number 2 Trift 
                 JH.B : supporter for professionals
-                HJ.C : professional for rending
+                HJ.C : professional for rendering
                 JS.C : professional for planning
                 KJ.L : professional for insight
 CREATION DESC : 
@@ -21,8 +21,9 @@ REVISION USER :
 REVISION DESC :  
 ***********************************************************************************************************************************************
 */
+@charset "UTF-8";
 /* temp */
-.container > * {
+body > .container > * {
   border: 1px dashed #ddd;
 }
 
