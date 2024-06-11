@@ -24,7 +24,7 @@ REVISION DESC :
 
 let userArr = [];
 const url = `${window.location.protocol+"//"+window.location.host+"/"}`;
-let isLogin;
+let isLogin = false;
 let strangers, members;
 
 
@@ -41,7 +41,6 @@ function init() {
 function setData() {
   setTimeout(() => {
     userArr = JSON.parse(JSON.stringify(UserObj)).users;
-    isLogin = (localStorage.getItem("isLogin") == null ) ? false : localStorage.getItem("isLogin");
     // 로그인 페이지에서 isLogin 값 변경 후 index.html로 페이지 이동이 일어나 비동기 호출이 필요.
     checkIsLogin();
     }, 0);
