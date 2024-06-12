@@ -1,0 +1,62 @@
+/*
+***********************************************************************************************************************************************
+CREATION DATE : 2024.06.10
+CREATION USER : EZEN Laboratory Number 2 Trift 
+                JH.B : supporter for professionals
+                HJ.C : professional for rending
+                JS.C : professional for planning
+                KJ.L : professional for insight
+CREATION DESC : 
+                1) 
+                2) 
+                3) 
+                4) 
+------------------------------------------------------------------------------------------------------------------------------------------------
+REVISION DATE : 
+REVISION USER : 
+REVISION DESC :
+------------------------------------------------------------------------------------------------------------------------------------------------
+REVISION DATE : 
+REVISION USER : 
+REVISION DESC :  
+***********************************************************************************************************************************************
+*/
+/* temp */
+.container > * {
+  border: 1px dashed #ddd;
+}
+
+/* 
+slider
+*/
+.slider {
+  width: 100%;
+  height: 500px;
+  background-color: var(--subColor);
+}
+
+
+/* 
+latest
+*/
+.latest {
+  width: 100%;
+  height: 662px;
+  border-bottom: 1px dashed red;
+}
+.latest .latest_container {
+  width: 100%;
+}
+.latest .latest_container .latest .latest_container_title {
+  width: 100%;
+}
+
+
+/* 
+popular
+*/
+.popular {
+  width: 100%;
+  height: 1219px;
+  border-bottom: 1px dashed red;
+}
