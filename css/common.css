@@ -26,8 +26,6 @@ REVISION DESC :
   /* color */
   --mainColor : #E00D32;
   --subColor : #FFED88;
-  --backgroundColor : #FFF;
-  --textColor : #333;
   --basicTextColor : #333;
   --backgroundColor : #fff;
 
@@ -97,7 +95,7 @@ header .gnb .highMenus .highMenus_item > a {
   text-align: center;
   font-weight: bold;
   font-size: 19px;
-  color: var(--textColor);
+  color: var(--basicTextColor);
 }
 header .gnb .highMenus .highMenus_item > a:hover {
   background-color: #fbfbfb;
