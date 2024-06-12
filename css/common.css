@@ -55,6 +55,23 @@ body {
 
 
 /* 
+건너뛰기 링크
+*/
+#gotoMain {
+	position: absolute;
+	left: -9999em;
+}
+#gotoMain:focus {
+	left: 50%;
+	margin: 3px 0 0 -3em;
+	padding: 5px 15px;
+	outline: 0;
+	background: var(--mainColor);
+	color: #fff;
+	z-index: 10;
+}
+
+/* 
 header
 */
 header {
