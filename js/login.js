@@ -3,7 +3,7 @@
 CREATION DATE : 2024.06.10
 CREATION USER : EZEN Laboratory Number 2 Trift 
                 JH.B : supporter for professionals
-                HJ.C : professional for rending
+                HJ.C : professional for rendering
                 JS.C : professional for planning
                 KJ.L : professional for insight
 CREATION DESC : 
@@ -18,7 +18,7 @@ REVISION DESC :
 ------------------------------------------------------------------------------------------------------------------------------------------------
 REVISION DATE : 
 REVISION USER : 
-REVISION DESC :  
+REVISION DESC : 
 ***********************************************************************************************************************************************
 */
 
@@ -59,38 +59,31 @@ console.log('first')
 
 function login(e, cb) {
   e.preventDefault();
-  console.log(url)
-  console.log("login");
   localStorage.setItem("isLogin", true);
-  
-  setTimeout(() => {
-    cb();
-  }, 0);
-  // location.href = url;
-  console.log('after')
+  location.href = url;
 }
 
 // 로그아웃 기능
 function logout(e) {
   e.preventDefault();
-  console.log("logout");
-  // isLogin = false;
-  localStorage.setItem("isLogin", false)
-  checkIsLogin()
+  localStorage.setItem("isLogin", false);
+  checkIsLogin();
 }
 
+// 로그인 관련 컴포넌트 상태 변경
 function checkIsLogin() {
-  console.log(`stranger`)
+  strangers = document.querySelectorAll(".header_top_user .stranger");
+  members = document.querySelectorAll(".header_top_user .member");
   let isLogin = localStorage.getItem("isLogin");
-  console.log(isLogin)
   if(isLogin =="true") {
-    console.log("checkIsLogin login")
-    console.log(strangers)
-    console.log(members)
+    // 로그인된 상태로 인한 stranger 은폐 및 member 표시
+    strangers.forEach((s) => s.classList.remove("active"))
+    members.forEach((m) => m.classList.add("active"))
+    
   }else {
-    console.log("checkIsLogin logout")
-    console.log(strangers)
-    console.log(members)
+    // 로그아웃된 상태로 인한 member 은폐 및 stranger 표시
+    strangers.forEach((s) => s.classList.add("active"))
+    members.forEach((m) => m.classList.remove("active"))
   }
 }
 

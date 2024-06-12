@@ -3,7 +3,7 @@
 CREATION DATE : 2024.05.30
 CREATION USER : EZEN Laboratory Number 2 Trift 
                 JH.B : supporter for professionals
-                HJ.C : professional for rending
+                HJ.C : professional for rendering
                 JS.C : professional for planning
                 KJ.L : professional for insight
 CREATION DESC : 
@@ -26,6 +26,8 @@ REVISION DESC :
   /* color */
   --mainColor : #E00D32;
   --subColor : #FFED88;
+  --backgroundColor : #FFF;
+  --textColor : #333;
   --basicTextColor : #333;
   --backgroundColor : #fff;
 
@@ -44,6 +46,7 @@ a:hover, a:focus { color: #4f4f4f; }
 body {
   font-family: 'Noto Sans KR';
   font-size: var(--normalTextSize);
+  color: var(--textColor);
   color: var(--basicTextColor);
 }
 .center {
@@ -60,6 +63,18 @@ header {
   height: 215px;
 }
 
+.header_top .header_top_user .stranger {
+  display: none;
+}
+.header_top .header_top_user .stranger.active {
+  display: block;
+}
+.header_top .header_top_user .member {
+  display: none;
+}
+.header_top .header_top_user .member.active {
+  display: block;
+}
 
 
 /* 
@@ -82,6 +97,7 @@ header .gnb .highMenus .highMenus_item > a {
   text-align: center;
   font-weight: bold;
   font-size: 19px;
+  color: var(--textColor);
 }
 header .gnb .highMenus .highMenus_item > a:hover {
   background-color: #fbfbfb;
@@ -103,6 +119,7 @@ header .gnb .midContent .middleMenus {
   top: 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  background-color: var(--backgroundColor);
   background-color: var(--backgroundColor);
   /* border: 1px dashed red;  */
 }
@@ -128,6 +145,7 @@ header .gnb .midContent .middleMenus .middleMenus_item .lowBody {
   width: 100%;
   /* border: 1px dashed blue; */
   display: flex;
+  background-color: var(--backgroundColor);
   background-color: var(--backgroundColor);
   z-index: 0;
   height: 0;
