@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="css/common.css">
   <script src="json/user.json" ></script>
   <script src="js/jquery-1.12.3.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/login.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/login.js"></script>
 	<link rel="icon" href="logo_trift.ico">
 </head>
 <body>
   this is login page
   <h1 class="logo"><a href="./index.html">go to main</a></h1>
-  <input type="button" value="login" class="login" onclick="login(event)">
+  <!-- <input type="button" value="login" class="login" onclick="login(event)"> -->
+  <!-- <input type="button" value="login" class="login" onclick="cbExample(10, function(result){console.log(result)})"> -->
+  <input type="button" value="login" class="login" onclick="login(event, checkIsLogin)">
 </body>
 </html>
