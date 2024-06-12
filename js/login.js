@@ -23,44 +23,11 @@ REVISION DESC :
 */
 
 // 로그인 기능
-// function login(e) {
-//   e.preventDefault();
-//   console.log("login");
-//   // isLogin = true;
-//   // localStorage.setItem("isLogin", true)
-//   // let strangers = JSON.parse(localStorage.getItem("strangers"))
-
-//   // console.log(strangers)
-//   // console.log(typeof(strangers))
-
-//   // isLogin = JSON.parse(localStorage.getItem("isLogin"))
-//   // isLogin = true;
-//   // console.log(isLogin)
-//   localStorage.setItem("isLogin", true);
-//   // location.href = url;
-//   checkIsLogin()
-// }
-
-var cbExample = function(number, cb) {
-  localStorage.setItem("isLogin", true);
-  location.href = url;
-  setTimeout(() => {
-    var sum = 0;
-    for(var i = number; i > 0; i--) {
-      sum += i;
-    }
-    cb(sum)
-  }, 0);
-}
-// cbExample(10, function(result){
-//   console.log(result)
-// })
-console.log('first')
-
 function login(e, cb) {
   e.preventDefault();
   localStorage.setItem("isLogin", true);
-  location.href = url;
+  // 로그인 성공시 이젠 페이지로 이동
+  history.back();
 }
 
 // 로그아웃 기능

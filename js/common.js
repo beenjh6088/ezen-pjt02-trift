@@ -135,37 +135,39 @@ function letsMoveWithMouse() {
   let isMouseDown = false;
   let startX, scrollLeft;
   
-  cards.addEventListener('mousedown', (e) => {
-    isMouseDown = true;
-    cardDeck.forEach(c => c.classList.remove("active"));
-    e.target.classList.add("active")
-    // 드래그를 시작한 지점의 x 좌표
-    startX = e.pageX - cards.offsetLeft;
-    // 현재 얼만큼 스크롤되었는지 변수
-    scrollLeft = cards.scrollLeft;
-  });
+  if(cards != null) {
+    cards.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      cardDeck.forEach(c => c.classList.remove("active"));
+      e.target.classList.add("active")
+      // 드래그를 시작한 지점의 x 좌표
+      startX = e.pageX - cards.offsetLeft;
+      // 현재 얼만큼 스크롤되었는지 변수
+      scrollLeft = cards.scrollLeft;
+    });
+    
+    cards.addEventListener('mouseleave', (e) => {
+      isMouseDown = false;
+      cardDeck.forEach(c => c.classList.remove("active"));
+    });
+    
+    cards.addEventListener('mouseup', (e) => {
+      isMouseDown = false;
+      cardDeck.forEach(c => c.classList.remove("active"));
+    });
+    
+    cards.addEventListener('mousemove', (e) => {
+      // 마우스 클릭이 아닐 떄는 실행 중지
+      if (!isMouseDown) return;
+    
+      // 이 함수의 정상적인 실행을 위해 HTML 태그의 내장 이벤트 중지
+      e.preventDefault();
   
-  cards.addEventListener('mouseleave', (e) => {
-    isMouseDown = false;
-    cardDeck.forEach(c => c.classList.remove("active"));
-  });
-  
-  cards.addEventListener('mouseup', (e) => {
-    isMouseDown = false;
-    cardDeck.forEach(c => c.classList.remove("active"));
-  });
-  
-  cards.addEventListener('mousemove', (e) => {
-    // 마우스 클릭이 아닐 떄는 실행 중지
-    if (!isMouseDown) return;
-  
-    // 이 함수의 정상적인 실행을 위해 HTML 태그의 내장 이벤트 중지
-    e.preventDefault();
-
-    // 마우스로 클릭한 시점부터 놓기까지의 거리만큼 스크롤로 이동하기
-    const x = e.pageX - cards.offsetLeft;
-    const walk = (x - startX) * 1;
-    cards.scrollLeft = scrollLeft - walk;
-  });
+      // 마우스로 클릭한 시점부터 놓기까지의 거리만큼 스크롤로 이동하기
+      const x = e.pageX - cards.offsetLeft;
+      const walk = (x - startX) * 1;
+      cards.scrollLeft = scrollLeft - walk;
+    });
+  }
 }
 
