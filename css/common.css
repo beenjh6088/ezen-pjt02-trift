@@ -312,24 +312,116 @@ cards
   cursor: pointer;
   position: relative;
   background: rgba(255,255,255,0.1);
-  font-size: 0;
   perspective: 500px;
 }
 .cards .card {
   width: 297px;
   height: 441px;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  /*align-items: center;*/
+  /*justify-content: center;*/
   font-weight: 100;
-  color: rgba(0,0,0,0.15);
-  box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
+  color: var(--basicTextColor);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
   transition: all 0.2s;
   transform: scale(0.98);
   will-change: transform;
+	position:relative;
+	border-radius:15px;
 }
 .cards .card.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
   transform: scale(1);
+}
+.card .container{
+	position:absolute;
+}
+	/*cardTop*/
+.card .cardTop{
+	width:297px;
+	height:285px;
+	position:relative;
+	background-image: url("../images/mud festival.png");
+	background-size:cover;
+	border-radius: 15px 15px 0 0 ;
+}
+.cardTop .cardTop_profile{
+	position:absolute;
+	bottom:10px;
+	left:25px;
+	bottom:15px;
+	width:133px;
+	height:40px;
+}
+.cardTop .cardTop_profile_img{
+	height:40px;
+	margin-right:15px;
+	float:left;
+}
+.cardTop .cardTop_profile_userName{
+	color:#fff;
+	margin-top:10px;
+	font-size:16px;
+	letter-spacing: -1px;
+}
+	/*cardBottom*/
+.card .cardBottom{
+	width:297px;
+	height:156px;
+	padding:20px 25px;
+	background-color: #fbfbfb;
+	border-radius: 0 0 15px 15px;
+	position:relative;
+}
+.cardBottom .cardBottom_location{
+	font-size:14px;
+	margin-bottom:10px;
+	letter-spacing: -1px;
+}
+.cardBottom .cardBottom_location li{
+	display:inline-block;
+}
+.cardBottom .cardBottom_location li:last-child:before{
+	content:"· "
+}
+.cardBottom .cardBottom_cardContent .cardBottom_cardContent_title{
+	font-size: 16px;
+	font-weight:bold;
+	margin-bottom:7px;
+}
+.cardBottom .cardBottom_cardContent .cardBottom_cardContent_body{
+	font-size: 14px;
+}
+.cardBottom .cardBottom_rating{
+	width:115px;
+	height:15px;
+	position:absolute;
+	bottom:25px;
+}
+.cardBottom .cardBottom_rating_star{
+	float:left;
+	margin-right:10px;
+}
+.cardBottom li:last-child .cardBottom_rating_star{
+	margin-right:0;
+}
+.cardBottom .cardBottom_heart{
+	position:absolute;
+	top:20px;
+	right:25px;
+	background-color: var(--mainColor);
+	width:50px;
+	height:23px;
+	border-radius:15px;
+	padding:2px 8px;
+}
+.cardBottom .cardBottom_heart li{
+	float:left;
+}
+.cardBottom .cardBottom_heart .cardBottom_heart_cnt{
+	font-size:14px;
+	font-weight:1000;
+	margin-left:3px;
+	color:#fff;
 }
