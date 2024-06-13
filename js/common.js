@@ -109,7 +109,7 @@ function toggleHoveringOnGnb() {
   midContents.forEach(content => {
     content.addEventListener("mouseleave", function() {
       // 마우스가 탭 콘텐츠를 벗어나면 콘텐츠 비활성화
-      content.classList.remove("active");
+      // content.classList.remove("active");
     });
   });
 
