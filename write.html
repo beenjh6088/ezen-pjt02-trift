@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trip as a Gift in your life</title>
   <link rel="stylesheet" href="css/common.css">
+  <!-- <link rel="stylesheet" href="css/index.css"> -->
   <script src="json/user.json" ></script>
   <script src="js/jquery-1.12.3.js"></script>
   <script defer src="js/common.js"></script>
@@ -21,8 +22,33 @@
     <!-- header -->
     <header id="header" data-include-file="html/common/header.html" class="includeJs"></header>
 
+    <!-- main -->
+    <main id="main">
+      <div class="center">
+        <div class="write">
+          <div class="write_container">
+            <form action="" id="frmWrite" name="frmWrite">
+              <div class="description">
+                <div class="description_image">
+                  <div class="description_image_addButton">
+                    <span class="description_image_addButton_addText">+</span>
+                  </div>
+                </div>
+                <div class="description_info">
+                  <p class="description_info_catg"><span>카테고리</span></p>
+                  <p class="description_info_spot"><a href="javascript:;">장소를 추가해주세요</a></p>
+                  <p class="description_info_addr"><label class="infoLabel"><img src="" alt=""><span>주소</span></label><input type="text"></p>
+                  <p class="description_info_date"><label class="infoLabel"><img src="" alt=""><span>날짜</span></label><input type="date"></p>
+                  <p class="description_info_rate"><label class="infoLabel"><img src="" alt=""><span>평점</span></label><input type="radio" name="rateStar"></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- // center -->
+    </main>
     
-
 		<!-- footer -->
 		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
   </div>

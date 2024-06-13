@@ -93,14 +93,14 @@ function toggleHoveringOnGnb() {
 
   // highMenus_item mouseover 이벤트
   highMenus.forEach(highmenu => {
+    let highmenu_item = document.getElementById(highmenu.dataset.tab);
     highmenu.addEventListener("mouseover", function() {
       // 모든 탭 콘텐츠 비활성화
-      midContents.forEach(tc => tc.classList.remove("active"));
+      midContents.forEach(mc => mc.classList.remove("active"));
 
       // 현재 탭과 연결된 콘텐츠 활성화
-      let highmenu_item = document.getElementById(highmenu.dataset.tab);
       if(highmenu_item != null) {
-        document.getElementById(highmenu.dataset.tab).classList.add("active");
+        highmenu_item.classList.add("active");
       }
     });
   });
