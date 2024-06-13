@@ -31,16 +31,22 @@
               <!-- 상단 영역 -->
               <div class="description">
                 <div class="description_image">
-                  <div class="description_image_addButton">
-                    <img class="description_image_addButton_addText"></img>
+                  <div class="description_image_container">
+                    <div class="description_image_container_addButton">
+                      <img class="description_image_container_addButton_addText" src="./images/icons/bigPlus.png" alt="bigPlus"></img>
+                    </div>
                   </div>
                 </div>
                 <div class="description_info">
-                  <p class="description_info_catg"><span>카테고리</span></p>
-                  <p class="description_info_spot"><a href="javascript:;">장소를 추가해주세요</a></p>
-                  <p class="description_info_addr"><label class="infoLabel"><img src="" alt=""><span>주소</span></label><input type="text"></p>
-                  <p class="description_info_date"><label class="infoLabel"><img src="" alt=""><span>날짜</span></label><input type="date"></p>
-                  <p class="description_info_rate"><label class="infoLabel"><img src="" alt=""><span>평점</span></label><input type="radio" name="rateStar"></p>
+                  <div class="description_info_container">
+                    <p class="description_info_container_catg"><span>카테고리</span></p>
+                    <p class="description_info_container_spot"><a href="javascript:;">장소를 추가해주세요</a></p>
+                    <div class="description_info_container_fields">
+                      <p class="description_info_container_field addr"><label class="infoLabel"><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label><input type="text"></p>
+                      <p class="description_info_container_field date"><label class="infoLabel"><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label><input type="date"></p>
+                      <p class="description_info_container_field rate"><label class="infoLabel"><img src="./images/icons/tagIcon.png" alt="star"><span>평점</span></label><input type="radio" name="rateStar"></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>
