@@ -86,6 +86,20 @@ header {
 .header_top{
 	height:100px;
 }
+/*header_top_user*/
+.header_top .header_top_user{
+	width:180px;
+	position:absolute;
+	right:0;
+	top:30px;
+}
+.header_top .header_top_user li{
+	float:left;
+}
+.header_top .header_top_user li a{
+	display:block;
+	width:90px;
+}
 .header_top .header_top_user .stranger {
   display: none;
 }
@@ -98,6 +112,7 @@ header {
 .header_top .header_top_user .member.active {
   display: block;
 }
+
 /*
 logo
 */
