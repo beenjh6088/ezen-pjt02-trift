@@ -52,7 +52,11 @@ body {
   margin: 0 auto;
   position: relative;
 }
-
+#main {
+  width: 100%;
+  position: relative;
+  /* z-index: 0; */
+}
 
 /* 
 건너뛰기 링크
@@ -96,6 +100,7 @@ header {
 gnb
 */
 header .gnb {
+  position: relative;
   /* temp */
   /* width: 100%; */
   /* border:1px dashed red; */
@@ -121,6 +126,7 @@ header .gnb .midContent {
   width: 100%;
   display: none;
   position: relative;
+  z-index: 1;
   /* border: 1px dashed red; */
 }
 header .gnb .midContent.active {
@@ -152,7 +158,7 @@ header .gnb .midContent .middleMenus .middleMenus_item > a {
 header .gnb .midContent .middleMenus .middleMenus_item > a:hover {
   font-weight: bold;
   color: #222;
-  z-index: 0;
+  z-index: 1;
   background-color: var(--backgroundColor);
 }
 header .gnb .midContent .middleMenus .middleMenus_item .lowBody {
@@ -164,7 +170,7 @@ header .gnb .midContent .middleMenus .middleMenus_item .lowBody {
   display: flex;
   background-color: var(--backgroundColor);
   background-color: var(--backgroundColor);
-  z-index: 0;
+  z-index: 1;
   height: 0;
   overflow: hidden;
 }
