@@ -82,6 +82,7 @@ function setAbsLink() {
 function makeEvents() {
   toggleHoveringOnGnb();
   letsMoveWithMouse();
+  rateOutOf5();
 }
 
 
@@ -179,3 +180,34 @@ function letsMoveWithMouse() {
   }
 }
 
+// 별로 평점 매기기
+function rateOutOf5() {
+  const stars = document.querySelectorAll(".star");
+  // const ratingValue = document.getElementById("rating-value");
+
+  // 특정 위치의 별을 클릭하면 클리한 별의 왼쪽 위치의 별까지 선택
+  // 클릭된 별을 클릭하면 원상복귀
+  stars.forEach(star => {
+      star.addEventListener("click", function() {
+          // const value = this.getAttribute("data-value");
+          // ratingValue.textContent = value;
+
+          let isSelected = this.classList.contains("selected");
+          clearSelection();
+          if(isSelected == false) {
+            this.classList.add("selected");
+          }
+          // this.nextElementSibling?.classList.add("selected");
+          // this.previousElementSibling?.classList.add("selected");
+      });
+  });
+
+  function clearSelection() {
+      stars.forEach(star => {
+          star.classList.remove("selected");
+          console.log("remove")
+      });
+  }
+
+
+}
