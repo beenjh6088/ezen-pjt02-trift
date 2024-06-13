@@ -235,7 +235,7 @@ header .gnb .midContent .middleMenus .middleMenus_item .lowBody .lowContents .lo
 /* 
 cards
 */
-/* .cards {
+.cards {
   width: 100%;
   border: 1px solid white;
   overflow-x: hidden;
@@ -266,4 +266,4 @@ cards
   cursor: grabbing;
   cursor: -webkit-grabbing;
   transform: scale(1);
-} */
+}
