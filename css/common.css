@@ -83,7 +83,9 @@ header
 header {
   height: 215px;
 }
-
+.header_top{
+	height:100px;
+}
 .header_top .header_top_user .stranger {
   display: none;
 }
@@ -96,7 +98,17 @@ header {
 .header_top .header_top_user .member.active {
   display: block;
 }
-
+/*
+logo
+*/
+header .logo{
+	width:188px;
+	position:absolute;
+	z-index:1;
+}
+header .logo img{
+	width:100%;
+}
 
 /* 
 gnb
@@ -109,13 +121,18 @@ header .gnb {
 }
 header .gnb .highMenus {
   display: flex;
+	width: 600px;
+	height:40px;
+	position:absolute;
+	left:200px;
 }
 header .gnb .highMenus .highMenus_item {
   flex: 1;
 }
 header .gnb .highMenus .highMenus_item > a {
   display: block;
-  padding: 16px;
+  height:40px;
+	line-height:40px;
   text-align: center;
   font-weight: bold;
   font-size: 19px;
@@ -130,6 +147,7 @@ header .gnb .midContent {
   position: relative;
   z-index: 1;
   /* border: 1px dashed red; */
+	top:40px;
 }
 header .gnb .midContent.active {
   display: block;
