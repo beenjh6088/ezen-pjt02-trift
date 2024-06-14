@@ -294,3 +294,37 @@ cards
   cursor: -webkit-grabbing;
   transform: scale(1);
 }
+
+/*footer 영역*/
+footer {
+	height: 200px;
+	background-color: #333;
+}
+.footInnerbox {
+	height: 200px;
+}
+.copy{
+	height: 100px;
+}
+.copy p{
+	height: 100px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	padding-top: 20px;
+}
+.linkImg ul li{
+	display:inline-block;
+	margin-right: 160px;
+	margin-top: 20px;
+}
+.linkImg ul li:last-child{
+	margin-right: 0;
+}
+.linkImg ul li img{
+	width: 100px;
+	height: 35px;
+}
+.linkImg ul li:hover {
+	opacity: 0.6;
+}
