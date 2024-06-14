@@ -132,13 +132,25 @@ thumbnail
 */
 .write .frmWrite_mid {
   width: 100%;
-  border: 1px dashed green;
+  /* border: 1px dashed green; */
 
 }
 .write .frmWrite_mid_header {
+  width: 100%;
+  border: 1px dashed green;
+}
+.write .frmWrite_mid_header_input {
+  /* display: inline-block; */
+  border: 1px dashed blue;
+  /* flex-grow: 1; */
+  width: 100%;
+  height: 80px;
+  border: none;
+  outline: none;
+}
+.write .frmWrite_mid_body {
   
 }
-
 
 
 /* 
@@ -149,3 +161,4 @@ contents
   border: 1px dashed blue;
 
 }
+
