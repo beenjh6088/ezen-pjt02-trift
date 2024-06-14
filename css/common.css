@@ -38,6 +38,8 @@ REVISION DESC :
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 ul { list-style : none; }
 a {text-decoration: none; color: var(--basicTextColor)}
@@ -86,6 +88,23 @@ header {
 .header_top{
 	height:100px;
 }
+.header_bottom{
+	position:relative;
+}
+/*header_top_user*/
+.header_top .header_top_user{
+	width:180px;
+	position:absolute;
+	right:0;
+	top:30px;
+}
+.header_top .header_top_user li{
+	float:left;
+}
+.header_top .header_top_user li a{
+	display:block;
+	width:90px;
+}
 .header_top .header_top_user .stranger {
   display: none;
 }
@@ -98,6 +117,7 @@ header {
 .header_top .header_top_user .member.active {
   display: block;
 }
+
 /*
 logo
 */
@@ -122,7 +142,7 @@ header .gnb {
 header .gnb .highMenus {
   display: flex;
 	width: 600px;
-	height:40px;
+	height:50px;
 	position:absolute;
 	left:200px;
 }
@@ -131,8 +151,8 @@ header .gnb .highMenus .highMenus_item {
 }
 header .gnb .highMenus .highMenus_item > a {
   display: block;
-  height:40px;
-	line-height:40px;
+  height:50px;
+	line-height:50px;
   text-align: center;
   font-weight: bold;
   font-size: 19px;
@@ -147,7 +167,7 @@ header .gnb .midContent {
   position: relative;
   z-index: 1;
   /* border: 1px dashed red; */
-	top:40px;
+	top:50px;
 }
 header .gnb .midContent.active {
   display: block;
@@ -257,6 +277,28 @@ header .gnb .midContent .middleMenus .middleMenus_item .lowBody .lowContents .lo
   font-weight: normal;
 }
 
+/*
+searchBar
+*/
+header .search{
+	width:330px;
+	height:35px;
+	position:absolute;
+	right:0;
+}
+header .search input[name='search_bar']{
+	width:100%;
+	height:35px;
+	border-radius:20px;
+	background-color: #EFEFEF;
+	border:none;
+	padding: 0 20px;
+}
+header .search img{
+	position:absolute;
+	top:8px;
+	right:20px;
+}
 
 
 /* 
@@ -272,28 +314,150 @@ cards
   cursor: pointer;
   position: relative;
   background: rgba(255,255,255,0.1);
-  font-size: 0;
   perspective: 500px;
 }
 .cards .card {
   width: 297px;
   height: 441px;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
+  /*align-items: center;*/
+  /*justify-content: center;*/
   font-weight: 100;
-  color: rgba(0,0,0,0.15);
-  box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
+  color: var(--basicTextColor);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
   transition: all 0.2s;
   transform: scale(0.98);
   will-change: transform;
+	position:relative;
+	border-radius:15px;
 }
 .cards .card.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
   transform: scale(1);
 }
+.card .container{
+	position:absolute;
+}
+	/*cardTop*/
+.card .cardTop{
+	width:297px;
+	height:285px;
+	position:relative;
+	background-image: url("../images/mud festival.png");
+	background-size:cover;
+	border-radius: 15px 15px 0 0 ;
+}
+.cardTop .cardTop_profile{
+  user-select: none;
+	position:absolute;
+	bottom:10px;
+	left:25px;
+	bottom:15px;
+	width:133px;
+	height:40px;
+}
+.cardTop .cardTop_profile_img{
+	height:40px;
+	margin-right:15px;
+	float:left;
+}
+.cardTop .cardTop_profile_userName{
+	margin-top:10px;
+	font-size:16px;
+	letter-spacing: -1px;
+}
+	/*cardBottom*/
+.card .cardBottom{
+	width:297px;
+	height:156px;
+	padding:20px 25px;
+	background-color: #fbfbfb;
+	border-radius: 0 0 15px 15px;
+	position:relative;
+}
+.cardBottom .cardBottom_location{
+	font-size:14px;
+	margin-bottom:10px;
+	letter-spacing: -1px;
+}
+.cardBottom .cardBottom_location li{
+	display:inline-block;
+}
+.cardBottom .cardBottom_location li:last-child:before{
+	content:"· "
+}
+.cardBottom .cardBottom_cardContent .cardBottom_cardContent_title{
+	font-size: 16px;
+	font-weight:bold;
+	margin-bottom:7px;
+  user-select: none;
+}
+.cardBottom .cardBottom_cardContent .cardBottom_cardContent_body{
+	font-size: 14px;
+}
+.cardBottom .cardBottom_rating{
+	width:115px;
+	height:15px;
+	position:absolute;
+	bottom:25px;
+}
+.cardBottom .cardBottom_rating_star{
+	float:left;
+	margin-right:10px;
+}
+.cardBottom li:last-child .cardBottom_rating_star{
+	margin-right:0;
+  user-select: none;
+}
+.cardBottom .cardBottom_heart{
+	position:absolute;
+	top:20px;
+	right:25px;
+	background-color: var(--mainColor);
+	width:50px;
+	height:23px;
+	border-radius:15px;
+	padding:2px 8px;
+}
+.cardBottom .cardBottom_heart li{
+	float:left;
+}
+.cardBottom .cardBottom_heart .cardBottom_heart_cnt{
+	font-size:14px;
+	font-weight:1000;
+	margin-left:3px;
+	color:#fff;
+}
+
+
+/* 
+rating
+*/
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  /* flex-grow: 1; */
+  width: 180px;
+  gap: 10px;
+}
+.star {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(../images/icons/starE.png) no-repeat;
+  cursor: pointer;
+}
+.star:hover,
+.star:hover ~ .star {
+  background: url(../images/icons/starF.png) no-repeat;
+}
+.star.selected,
+.star.selected ~ .star {
+  background: url(../images/icons/starF.png) no-repeat;
+}
+
 
 /*footer 영역*/
 footer {
