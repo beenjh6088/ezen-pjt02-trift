@@ -137,11 +137,11 @@ thumbnail
 }
 .write .frmWrite_mid_header {
   width: 100%;
-  border: 1px dashed green;
+  /* border: 1px dashed green; */
 }
 .write .frmWrite_mid_header_input {
   /* display: inline-block; */
-  border: 1px dashed blue;
+  /* border: 1px dashed blue; */
   /* flex-grow: 1; */
   width: 100%;
   height: 80px;
@@ -157,10 +157,17 @@ thumbnail
   /* border: 1px dashed blue; */
 }
 .write .frmWrite_mid_body_picture {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 200px;
-  border: 1px dashed red;
+  border: 1px solid #CCC;
+  background-color: #FBFBFB;
+  border-radius: 18px;
+}
+.write .frmWrite_mid_body_picture_file {
+  
 }
 
 
@@ -169,7 +176,7 @@ contents
 */
 .write .frmWrite_btm {
   width: 100%;
-  border: 1px dashed blue;
+  /* border: 1px dashed blue; */
 
 }
 
