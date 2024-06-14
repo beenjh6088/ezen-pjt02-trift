@@ -334,9 +334,6 @@ cards
   cursor: -webkit-grabbing;
   transform: scale(1);
 }
-.card .container{
-	position:absolute;
-}
 	/*cardTop*/
 .card .cardTop{
 	width:297px;
