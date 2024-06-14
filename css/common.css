@@ -38,6 +38,8 @@ REVISION DESC :
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 ul { list-style : none; }
 a {text-decoration: none; color: var(--basicTextColor)}
@@ -344,6 +346,7 @@ cards
 	border-radius: 15px 15px 0 0 ;
 }
 .cardTop .cardTop_profile{
+  user-select: none;
 	position:absolute;
 	bottom:10px;
 	left:25px;
@@ -357,7 +360,6 @@ cards
 	float:left;
 }
 .cardTop .cardTop_profile_userName{
-	color:#fff;
 	margin-top:10px;
 	font-size:16px;
 	letter-spacing: -1px;
@@ -386,6 +388,7 @@ cards
 	font-size: 16px;
 	font-weight:bold;
 	margin-bottom:7px;
+  user-select: none;
 }
 .cardBottom .cardBottom_cardContent .cardBottom_cardContent_body{
 	font-size: 14px;
@@ -402,6 +405,7 @@ cards
 }
 .cardBottom li:last-child .cardBottom_rating_star{
 	margin-right:0;
+  user-select: none;
 }
 .cardBottom .cardBottom_heart{
 	position:absolute;
@@ -421,4 +425,32 @@ cards
 	font-weight:1000;
 	margin-left:3px;
 	color:#fff;
+}
+
+
+/* 
+rating
+*/
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  /* flex-grow: 1; */
+  width: 180px;
+  gap: 10px;
+}
+.star {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(../images/icons/starE.png) no-repeat;
+  cursor: pointer;
+}
+.star:hover,
+.star:hover ~ .star {
+  background: url(../images/icons/starF.png) no-repeat;
+}
+.star.selected,
+.star.selected ~ .star {
+  background: url(../images/icons/starF.png) no-repeat;
 }
