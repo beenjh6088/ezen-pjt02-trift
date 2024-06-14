@@ -315,16 +315,20 @@ cards
   position: relative;
   background: rgba(255,255,255,0.1);
   perspective: 500px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 .cards .card {
   width: 297px;
   height: 441px;
-  display: inline-flex;
+  /* display: inline-flex; */
   /*align-items: center;*/
   /*justify-content: center;*/
   font-weight: 100;
   color: var(--basicTextColor);
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+  /* box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15); */
   transition: all 0.2s;
   transform: scale(0.98);
   will-change: transform;
@@ -338,12 +342,14 @@ cards
 }
 	/*cardTop*/
 .card .cardTop{
-	width:297px;
+	width:100%;
 	height:285px;
 	position:relative;
 	background-image: url("../images/mud festival.png");
 	background-size:cover;
 	border-radius: 15px 15px 0 0 ;
+	border:1px solid var(--lightGrayColor);
+	border-bottom:none;
 }
 .cardTop .cardTop_profile{
   user-select: none;
@@ -351,7 +357,7 @@ cards
 	bottom:10px;
 	left:25px;
 	bottom:15px;
-	width:133px;
+	width:80%;
 	height:40px;
 }
 .cardTop .cardTop_profile_img{
@@ -363,6 +369,7 @@ cards
 	margin-top:10px;
 	font-size:16px;
 	letter-spacing: -1px;
+	color:#fff;
 }
 	/*cardBottom*/
 .card .cardBottom{
@@ -372,6 +379,8 @@ cards
 	background-color: #fbfbfb;
 	border-radius: 0 0 15px 15px;
 	position:relative;
+	border:1px solid var(--lightGrayColor);
+	border-top:none;
 }
 .cardBottom .cardBottom_location{
 	font-size:14px;
