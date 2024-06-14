@@ -82,7 +82,7 @@ function setAbsLink() {
 function makeEvents() {
   toggleHoveringOnGnb();
   letsMoveWithMouse();
-  rateOutOf5();
+  rateOutOfN();
 }
 
 
@@ -181,7 +181,7 @@ function letsMoveWithMouse() {
 }
 
 // 별로 평점 매기기
-function rateOutOf5() {
+function rateOutOfN() {
   const stars = document.querySelectorAll(".star");
   // const ratingValue = document.getElementById("rating-value");
 
