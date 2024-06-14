@@ -29,7 +29,7 @@ REVISION DESC :
   --basicTextColor : #333;
   --lightGrayColor : #EFEFEF;
   --whiteGrayColor : #F0F0F0;
-  --backgroundColor : #fff;
+  --realWhiteColor : #fff;
 
   /* fontSize */
   --normalTextSize : 16px;
@@ -50,6 +50,7 @@ body {
   font-size: var(--normalTextSize);
   color: var(--textColor);
   color: var(--basicTextColor);
+  width: 100%;
 }
 .center {
   width: 1200px;
@@ -75,7 +76,7 @@ body {
 	padding: 5px 15px;
 	outline: 0;
 	background: var(--mainColor);
-	color: #fff;
+	color: var(--realWhiteColor);
 	z-index: 10;
 }
 
@@ -180,8 +181,8 @@ header .gnb .midContent .middleMenus {
   top: 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: var(--backgroundColor);
-  background-color: var(--backgroundColor);
+  background-color: var(--realWhiteColor);
+  background-color: var(--realWhiteColor);
   /* border: 1px dashed red;  */
 }
 header .gnb .midContent .middleMenus .middleMenus_item {
@@ -199,7 +200,7 @@ header .gnb .midContent .middleMenus .middleMenus_item > a:hover {
   font-weight: bold;
   color: #222;
   z-index: 1;
-  background-color: var(--backgroundColor);
+  background-color: var(--realWhiteColor);
 }
 header .gnb .midContent .middleMenus .middleMenus_item .lowBody {
   position: absolute;
@@ -208,8 +209,8 @@ header .gnb .midContent .middleMenus .middleMenus_item .lowBody {
   width: 100%;
   /* border: 1px dashed blue; */
   display: flex;
-  background-color: var(--backgroundColor);
-  background-color: var(--backgroundColor);
+  background-color: var(--realWhiteColor);
+  background-color: var(--realWhiteColor);
   z-index: 1;
   height: 0;
   overflow: hidden;
@@ -444,6 +445,7 @@ rating
   display: flex;
   flex-direction: row-reverse;
   justify-content: start;
+  align-self: center;
   /* flex-grow: 1; */
   width: 180px;
   gap: 10px;

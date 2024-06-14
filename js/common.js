@@ -80,9 +80,16 @@ function setAbsLink() {
 
 // 이벤트 넣어주기
 function makeEvents() {
+  let pageName = getPageName();
+
   toggleHoveringOnGnb();
   letsMoveWithMouse();
   rateOutOfN();
+
+  if(pageName == "write.html"){
+    setSignatureImage();
+    punInOutPictures();
+  }
 }
 
 
@@ -140,14 +147,6 @@ function letsMoveWithMouse() {
     cards.addEventListener('mousedown', (e) => {
       isMouseDown = true;
       cardDeck.forEach(c => c.classList.remove("active"));
-      // let curtar = e.currentTarget;
-      // console.log("curtar")
-      // console.log(curtar)
-      // console.log(e.target)
-      // console.log(e)
-      console.log(e.target)
-      console.log(e.target.closest(".card"))
-      // e.target.classList.add("active")
       e.target.closest(".card").classList.add("active")
       // 드래그를 시작한 지점의 x 좌표
       startX = e.pageX - cards.offsetLeft;
@@ -208,6 +207,14 @@ function rateOutOfN() {
           console.log("remove")
       });
   }
+}
 
 
+// 페이지 이름 가져오기
+function getPageName() {
+  let pageName = null;
+  var tempPageName = location.href;
+  let strPageName = tempPageName.split("/");
+  pageName = strPageName[strPageName.length-1].split("?")[0];
+  return pageName;
 }
