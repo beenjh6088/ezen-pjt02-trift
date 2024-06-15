@@ -24,11 +24,11 @@ REVISION DESC :
 */
 :root {
   /* color */
-  --mainColor : #E00D32;
-  --subColor : #FFED88;
+  --mainColor : #e00d32;
+  --subColor : #ffed88;
   --basicTextColor : #333;
-  --lightGrayColor : #EFEFEF;
-  --whiteGrayColor : #F0F0F0;
+  --lightGrayColor : #efefef;
+  --whiteGrayColor : #f0f0f0;
   --realWhiteColor : #fff;
 
   /* fontSize */
@@ -61,6 +61,29 @@ body {
   width: 100%;
   position: relative;
   /* z-index: 0; */
+}
+.button {
+  width: 301px;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainColor);
+  color: var(--realWhiteColor);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 19px;
+  box-shadow: 2px 2px 3px rgba(30,30,30,0.5);
+}
+.button:active {
+  transform: scale(0.98);
+}
+.button.deactivated {
+  cursor: no-drop;
+  background-color: #999;
+}
+.button.deactivated:active {
+  transform: scale(1);
 }
 
 /* 

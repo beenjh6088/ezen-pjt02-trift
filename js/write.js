@@ -51,7 +51,7 @@ function setSignatureImage() {
 function punInOutPictures() {
   console.log("openFileDialog");
   let fileContainer = document.querySelector(".frmWrite_body_file")
-  let uploadIcon = document.querySelector(".frmWrite_body_file_picture");
+  let uploadIcon = document.querySelector(".frmWrite_body_file_picture.active");
   let fileInput = document.querySelector(".frmWrite_body_file_picture_fileDialog");
   let limit = 5;
   let cnt = 0;
@@ -80,7 +80,10 @@ function punInOutPictures() {
         img.addEventListener("dblclick", function(e) {
           fileContainer.removeChild(img)
         })
+        // 사진을 추가할 때마다 `사진 추가하기` 아이콘을 부모요소 맨 뒤에 배치
+        uploadIcon = fileContainer.removeChild(uploadIcon);
         fileContainer.appendChild(img);
+        fileContainer.appendChild(uploadIcon);
       }
       reader.readAsDataURL(files[0])
 

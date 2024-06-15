@@ -19,9 +19,9 @@ description
   width: 100%;
   height: 300px;
   background-color: #FBFBFB;
+  border: 1px solid #CCCCCC;
   display: flex;
   border-radius: 18px;
-  border: 1px solid #CCCCCC;
 }
 .write .frmWrite_head .description_image {
   flex-grow: 1;
@@ -148,6 +148,8 @@ description
   width: 180px;
   border: none;
   outline: none;
+  color: #666;
+  font-family: 'Noto Sans KR';
 }
 
 
@@ -156,6 +158,10 @@ thumbnail
 */
 .write .frmWrite_body {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 48px;
   /* border: 1px dashed green; */
 
 }
@@ -197,8 +203,6 @@ thumbnail
   align-items: center;
   justify-content: center;
   gap: 16px 0;
-  background-color: var(--realWhiteColor);
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
   object-fit: cover;
   object-position: center center;
   cursor: pointer;
@@ -217,16 +221,21 @@ thumbnail
 .write .frmWrite_body_file_picture_fileDialog {
   display: none;
 }
-
-
-/* 
-contents
-*/
-.write .frmWrite_btm {
+.write .frmWrite_body_content {
   width: 100%;
-  /* border: 1px dashed blue; */
-
 }
-
-
-
+.write .frmWrite_body_content_textarea {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: 18px;
+  background-color: #FBFBFB;
+  border: 1px solid #CCCCCC;
+  padding: 8px;
+  outline: none;
+}
+.write .frmWrite_body_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
