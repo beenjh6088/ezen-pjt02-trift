@@ -3,7 +3,8 @@ class Card extends HTMLElement {
     let userName = this.getAttribute("userName") ? this.getAttribute("userName") : "Enter a Username"
     let title = this.getAttribute("title") ? this.getAttribute("title") : "Enter a Title";
     let subtitle = this.getAttribute("subtitle") ? this.getAttribute("subtitle") : "Enter a Subtitle";
-
+    let likeAmount = isNaN(this.getAttribute("likeAmount")) ? 0 : parseInt(this.getAttribute("likeAmount"));
+    // console.log(likeAmount)
 
     this.innerHTML = `
       <div class="card">
@@ -35,7 +36,7 @@ class Card extends HTMLElement {
           </ul>
           <ul class="cardBottom_heart">
             <li class="cardBottom_heart_icon"><img src="../../images/icons/heartWhite.png" alt="heart"></li>
-            <li class="cardBottom_heart_cnt">21</li>
+            <li class="cardBottom_heart_cnt">${likeAmount}</li>
           </ul>
         </div>
       </div>

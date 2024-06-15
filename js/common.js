@@ -147,7 +147,7 @@ function letsMoveWithMouse() {
     cards.addEventListener('mousedown', (e) => {
       isMouseDown = true;
       cardDeck.forEach(c => c.classList.remove("active"));
-      e.target.closest(".card").classList.add("active")
+      e.target.closest(".card") ? e.target.closest(".card").classList.add("active") : null;
       // 드래그를 시작한 지점의 x 좌표
       startX = e.pageX - cards.offsetLeft;
       // 현재 얼만큼 스크롤되었는지 변수
