@@ -30,4 +30,4 @@ function importJs(jsFilePath) {
 
   document.body.appendChild(js);
 }
-importJs("./js/class/Card.js")
+importJs(`${url}/js/class/Card.js`)

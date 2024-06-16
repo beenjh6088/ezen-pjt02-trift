@@ -87,7 +87,6 @@ function makeEvents() {
   rateOutOfN();
 
   if(pageName == "write.html"){
-    setSignatureImage();
     punInOutPictures();
   }
 }
@@ -204,7 +203,6 @@ function rateOutOfN() {
   function clearSelection() {
       stars.forEach(star => {
           star.classList.remove("selected");
-          console.log("remove")
       });
   }
 }
@@ -218,3 +216,4 @@ function getPageName() {
   pageName = strPageName[strPageName.length-1].split("?")[0];
   return pageName;
 }
+

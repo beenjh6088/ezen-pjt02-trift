@@ -6,8 +6,8 @@
   <title>Trip as a Gift in your life</title>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/write.css">
-  <script src="json/user.json" ></script>
-  <script src="js/jquery-1.12.3.js"></script>
+  <script defer src="json/user.json" ></script>
+  <script defer src="js/jquery-1.12.3.js"></script>
   <script defer src="js/common.js"></script>
   <script defer src="js/login.js"></script>
   <script defer src="js/write.js"></script>
@@ -35,7 +35,7 @@
                 <div class="description">
                   <div class="description_image">
                     <div class="description_image_container">
-                      <div class="description_image_container_addButton button">
+                      <div class="description_image_container_addButton button" onclick="openModal()">
                         <img class="description_image_container_addButton_addText" src="./images/icons/bigPlus.png" alt="bigPlus"></img>
                         <input type="file" class="description_image_container_addButton_fileDialog">
                       </div>
@@ -44,7 +44,7 @@
                   <div class="description_info">
                     <div class="description_info_container">
                       <p class="description_info_container_catg"><span>카테고리</span></p>
-                      <p class="description_info_container_spot"><a href="javascript:;">장소를 추가해주세요</a></p>
+                      <p class="description_info_container_spot"><a href="javascript:;" onclick="openModal()">장소를 추가해주세요</a></p>
                       <div class="description_info_container_fields">
                         <p class="description_info_container_fields_row addr">
                           <label class="description_info_container_fields_row_label"><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
@@ -95,9 +95,115 @@
       <!-- // center -->
     </main>
     
-    
 		<!-- footer -->
 		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
+  </div>
+
+  <div id="spot" class="spot" onclick="closeModal(event)">
+    <div class="spot_body">
+      <div class="spot_body_search">
+        <input type="text" class="spot_body_search_key" placeholder="장소를 검색하세요" onkeyup="filter()">
+      </div>
+      <div class="spot_body_recommend">
+        <h2 class="spot_body_recommend_title">추천</h2>
+        <ul class="spot_body_recommend_list">
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">여의도 한강공원, 서울특별시</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="서울특별시 영등포구 여의동로 330 한국">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="330, Yeouidong-ro, Yeongdeungpo-gu, Seoul, Republic of Korea">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/1173704197/ko/%EC%82%AC%EC%A7%84/%EC%84%9C%EC%9A%B8-%EC%97%AC%EC%9D%98%EB%8F%84-%EB%8F%84%EC%8B%9C%EA%B4%80-%EC%A0%84%EA%B2%BD.jpg?s=612x612&w=0&k=20&c=o-6neFTAuOrb_cn-sW8AMp61IHJ3ykChUUDmM8jDli0=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">폰스타, 호주 케언즈</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="식당,restaurant,ocean,바다,선상,onboard">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="파이어 포인트 로드 | 마린 마리나, E31 버스, 케언즈 킌즈랜드 4870 오스트레일리아 호주">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="Pier Point Road | Marlin Marina, E31 Berth, Cairns City QLD 4870 Australia">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/1222689456/ko/%EC%82%AC%EC%A7%84/%EC%95%A0%EB%B2%84%EB%94%98-%ED%95%AD%EA%B5%AC-%ED%99%8D%EC%BD%A9.jpg?s=612x612&w=0&k=20&c=1VgOkhmmbsuCm9GbbZiX-UKgSVt9k05DHKitOxQc6jE=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">디스트릭트 8, 호주 시드니</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="식당,restaurant,아시아음식,중국음식">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="1 바트리 St, 캔리 베일 뉴사우스웰스 2166 오스트레일리아 호주">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="1 Bartley St, Canley Vale NSW 2166 Australia">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/1373031825/ko/%EC%82%AC%EC%A7%84/%ED%95%98%EC%9D%B4%EB%82%98%EB%84%A4-%EC%B9%98%ED%82%A8-%EB%9D%BC%EC%9D%B4%EC%8A%A4%EC%9D%98-%ED%81%B4%EB%A1%9C%EC%A6%88%EC%97%85-%EB%B3%B4%EA%B8%B0.jpg?s=612x612&w=0&k=20&c=N4aY-UbOV5pg051JZg0n_wR6kZO32DB-CsWwLQJxrVE=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">타카오산 온천 고쿠라쿠, 일본 도쿄도 하치오지</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,온천,hotSpring">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="2229 타카오마치, 하치오지, 토쿄 193-0844, 일본">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="2229 Takaomachi, Hachioji, Tokyo 193-0844, Japan">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/2151126079/ko/%EC%82%AC%EC%A7%84/shiraike-jigoku-white-pond-hell-with-steam-%EB%B2%B3%ED%91%B8-%EC%98%A4%EC%9D%B4%ED%83%80-%EC%9D%BC%EB%B3%B8.jpg?s=612x612&w=0&k=20&c=ZLPmOvMscFnhWwqoHiOoZol0bE2o5zqBn3Ti2J46dsU=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">펭귄퍼레이드, 호주 멜버른</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,penguinParade,펭귄퍼레이드">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="1019 벤트너 로드, 섬머랜드 빅토리아주 3922, 오스트레일리아 호주">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="1019 Ventnor Rd, Summerlands VIC 3922, Australia">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/905203426/ko/%EC%82%AC%EC%A7%84/%EC%9E%91%EC%9D%80-%ED%8E%AD%EA%B7%84%EC%9C%BC%EB%A1%9C-%EC%95%8C%EB%A0%A4%EC%A7%84-%EB%B8%94%EB%A3%A8-%ED%8E%AD%EA%B7%84-%ED%98%B8%EC%A3%BC-%EB%89%B4%EC%A7%88%EB%9E%9C%EB%93%9C-%EB%BF%90%EB%A7%8C-%EC%95%84%EB%8B%88%EB%9D%BC-%EC%8B%9C%EB%93%9C%EB%8B%88%EC%99%80-%EB%A9%9C%EB%B2%84%EB%A5%B8%EC%9D%98-%EA%B0%80%EA%B9%8C%EC%9D%B4%EC%97%90%EC%84%9C-%ED%95%B4%EC%95%88-%EC%A7%80%EC%97%AD%EC%97%90%EC%84%9C-%EB%B0%9C%EA%B2%AC.jpg?s=612x612&w=0&k=20&c=u8cFFYfkyljKVPtj8abrEG6iTy6qd1lDwqPSMexHaRk=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">박수기정, 제주도</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,oceanview,바다">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="1008 감산리, 안덕면, 서귀포시, 제주도 한국">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="1008 Gamsan-ri, Andeok-myeon, Seogwipo-si, Jeju-do, Republic of Korea">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/1649777251/ko/%EC%82%AC%EC%A7%84/%EC%A0%9C%EC%A3%BC%EB%8F%84-%EB%B0%95%EC%88%98%EC%A0%95%EC%9D%98-%EC%9D%BC%EB%AA%B0.jpg?s=612x612&w=0&k=20&c=82_D725KapbJmN_YTO8sZQfIWT3doo4kzRd9NRbAON8=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">지우펀, 대만 타이페이</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,restaurant,식당">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="224, 타이완, 뉴타이페이, 루이펀구, 시하권20호 대만">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="224, Taiwan, New Taipei City, Ruifang District, 市下巷20號">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/843053210/ko/%EC%82%AC%EC%A7%84/jiufen-%ED%83%80%EC%9D%B4-%ED%8E%98%EC%9D%B4-%EB%8C%80%EB%A7%8C-%EA%B7%B8%EB%A6%BC%EC%97%90%EC%84%9C-%EC%A4%91%EA%B5%AD-%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%9D%98-%EC%9D%98%EB%AF%B8%EB%8A%94-jiufen%EC%9D%98-%EB%B9%A8%EA%B0%84-%EA%B8%80%EB%A1%9C%EB%B8%8C.jpg?s=612x612&w=0&k=20&c=7ZSoYo9yDFX3Ct6JGOjk7WQElR40JbIk74z3TuaFWrM=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">핑크레이크, 호주, 웨스턴오스트레일리아 그레고리</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,lake,호수">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="포트 그레고리로드, 그레고리 웨스턴오스트레일리아 6535, 호주">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="Port Gregory Rd, Gregory WA 6535, Australia">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/1368681067/ko/%EC%82%AC%EC%A7%84/%ED%98%B8%EC%A3%BC-%EC%84%9C%EB%B6%80-%EC%B9%BC%EB%B0%94%EB%A6%AC-%EA%B7%BC%EC%B2%98-%EC%9D%98-%EB%B6%84%ED%99%8D%EC%83%89-%ED%98%B8%EC%88%98-%ED%97%9B-%EB%9D%BC%EA%B5%B0.jpg?s=612x612&w=0&k=20&c=qGY4o9heZLc8QL-ceESW3tdf04UG5oIihzH8ARCY4JE=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">그레이트베리어리프, 호주 케언즈</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,ocean,바다,액티비티,activity">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="케언즈 퀸즈랜드 4870, 호주">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="Great Barrier Reef, Cairns City QLD 4870, Australia">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/153971297/ko/%EC%82%AC%EC%A7%84/%EC%82%B0%ED%98%B8%EC%83%89-%EC%82%B0%ED%98%B8%EC%B4%88.jpg?s=612x612&w=0&k=20&c=DM0pnFYBAByXMIVObXaLizL8nxSCAdqxwcQ-BXc6sl8=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">우유니 소금사막, 볼리비아</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,desert,사막,액티비티,activity">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="살라 데 유우니, 볼리비아">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="Salar De Uyuni, Bolivia">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/465844068/ko/%EC%82%AC%EC%A7%84/%EC%82%AC%EC%9D%B4%EC%9D%98-%EC%A7%80%EA%B5%AC%EB%B3%84-%EB%B0%8F-the-heaven.jpg?s=612x612&w=0&k=20&c=ldEWtf_rseGzqiNHLqnT5CC7HWViG7xX0vauEciyiqg=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">하트봄버, 일본 오키나와</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,ocean,바다">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="2 코우리, 나키진, 쿠니가미구, 오키나와 905-0406, 일본">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="2 Kouri, Nakijin, Kunigami District, Okinawa 905-0406, Japan">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://media.istockphoto.com/id/1504867485/ko/%EC%82%AC%EC%A7%84/%ED%83%80%EC%9D%B8-%EB%B9%84%EC%B9%98-%ED%95%98%ED%8A%B8-%EB%9D%BD.jpg?s=612x612&w=0&k=20&c=R9aHF6Zqz6ocgNwIIvrlJ0DBpnrNfhUVKIjntkOHSAM=">
+          </li>
+          <li class="spot_body_recommend_list_item">
+            <a href="javascript:;" class="spot_body_recommend_list_item_name" onclick="setSignatureImage(event)">비세노와르미, 일본 오키나와</a>
+            <input type="hidden" class="spot_body_recommend_list_item_category" value="여행,trip,travel,ocean,바다">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordKR" value="2278 비세, 모토부, 쿠니가미구, 오키나와 905-0207, 일본">
+            <input type="hidden" class="spot_body_recommend_list_item_keywordEN" value="2278 Bise, Motobu, Kunigami District, Okinawa 905-0207, Japan">
+            <input type="hidden" class="spot_body_recommend_list_item_iamge" value="https://lh5.googleusercontent.com/p/AF1QipONSOR-S5HYsIvwpKubBRyfm3EcAHXDIBJCuBf-=w408-h544-k-no">
+          </li>
+          <li class="spot_body_recommend_list_item">1</li>
+          <li class="spot_body_recommend_list_item">2</li>
+          <li class="spot_body_recommend_list_item">3</li>
+          <li class="spot_body_recommend_list_item">4</li>
+          <li class="spot_body_recommend_list_item">5</li>
+          <li class="spot_body_recommend_list_item">6</li>
+          <li class="spot_body_recommend_list_item">7</li>
+          <li class="spot_body_recommend_list_item">8</li>
+          <li class="spot_body_recommend_list_item">9</li>
+          <li class="spot_body_recommend_list_item">10</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>

@@ -56,7 +56,6 @@ description
   position: absolute;
 }
 .write .frmWrite_head .description_image_container_addButton:active {
-  /* transform: scale(0.98) translate(0%, -50%); */
   transform: scale(0.98);
 }
 .write .frmWrite_head .description_image_container_signatureImage {
@@ -170,9 +169,6 @@ thumbnail
   /* border: 1px dashed green; */
 }
 .write .frmWrite_body_header_input {
-  /* display: inline-block; */
-  /* border: 1px dashed blue; */
-  /* flex-grow: 1; */
   width: 100%;
   height: 80px;
   border: none;
@@ -238,4 +234,31 @@ thumbnail
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/* 
+modal
+*/
+#spot {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#spot .spot_body {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 56px;
+  border: 1px solid #888;
+  width: 50%; 
+}
+#spot .spot_body_recommend_list {
+  height: 300px;
+  overflow: hidden;
 }
