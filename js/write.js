@@ -1,4 +1,28 @@
 /*
+***********************************************************************************************************************************************
+CREATION DATE : 2024.06.15
+CREATION USER : EZEN Laboratory Number 2 Trift 
+                JH.B : supporter for professionals
+                HJ.C : professional for rendering
+                JS.C : professional for planning
+                KJ.L : professional for insight
+CREATION DESC : 
+                1) 
+                2) 
+                3) 
+                4) 
+------------------------------------------------------------------------------------------------------------------------------------------------
+REVISION DATE : 
+REVISION USER : 
+REVISION DESC :
+------------------------------------------------------------------------------------------------------------------------------------------------
+REVISION DATE : 
+REVISION USER : 
+REVISION DESC :  
+***********************************************************************************************************************************************
+*/
+
+/*
 대표이미지 선택
 async는 비동기 기능 예약어로 File 객체 정보 받을 때 필요해서 사용함.
 */
@@ -18,8 +42,8 @@ async function setSignatureImage(event) {
     // blob은 바이너리 데이터를 다루기 위해 사용. 파일이나 이미지 처리시 필요
     const blob = await response.blob();
 
-    // console.log(response)
-    // console.log(blob)
+    console.log(response)
+    console.log(blob)
 
     // Blob 객체를 File 객체로 변환. readAsDataURL를 사용하기 위해 File객체로 변환
     file = new File([blob], fileName, {type: blob.type});
@@ -130,4 +154,48 @@ function filter() {
   }
 }
 
+
+/*
+기록하기 버튼 활성화 여부 판단
+주소, 날짜, 제목, 내용에 값이 하나라도 없을경우 기록하기 버튼은 비활성화
+*/
+function checkInputs() {
+  let inputData = document.querySelectorAll(".description_info_container_fields_row_input");
+  let textTitle = document.querySelector(".frmWrite_body_header_input").value.trim();
+  let textArea = document.querySelector(".frmWrite_body_content_textarea").value.trim();
+  let recordButton = document.querySelector("#frmWrite_body_button_record");
+  let isFull = true;
+
+  // 주소, 날짜에 공백있는지 검사
+  for(let i = 0; i < inputData.length; i++) {
+    let inputDatum = inputData[i];
+    if(inputDatum.value.trim() == ""){
+      isFull = false;
+      break;
+    }
+  }
+  // 제목에 공백있는지 검사
+  if(textTitle == "") {
+    isFull = false;
+  }
+  // 내용에 공백있는지 검사
+  if(textArea == "") {
+    isFull = false;
+  }
+
+  // 필수 입력사항이 기입되었을 경우 버튼 활성화
+  if(isFull) {
+    recordButton.classList.remove("deactivated");
+  }else {
+    recordButton.classList.add("deactivated");
+  }
+}
+
+// 기록하기 버튼 활성화 방법에 대한 안내 툴팁 이벤트
+document.querySelector("#frmWrite_body_button_record.deactivated").addEventListener("mouseover", function() {
+  document.querySelector(".button.deactivated + .frmWrite_body_button_guide") ? document.querySelector(".button.deactivated + .frmWrite_body_button_guide").classList.remove("hide") : null;
+})
+document.querySelector("#frmWrite_body_button_record.deactivated").addEventListener("mouseout", function() {
+  document.querySelector(".button.deactivated + .frmWrite_body_button_guide") ? document.querySelector(".button.deactivated + .frmWrite_body_button_guide").classList.add("hide") : null;
+})
 

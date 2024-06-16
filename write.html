@@ -46,13 +46,13 @@
                       <p class="description_info_container_catg"><span>카테고리</span></p>
                       <p class="description_info_container_spot"><a href="javascript:;" onclick="openModal()">장소를 추가해주세요</a></p>
                       <div class="description_info_container_fields">
-                        <p class="description_info_container_fields_row addr">
-                          <label class="description_info_container_fields_row_label"><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
-                          <input class="description_info_container_fields_row_input" type="text" placeholder="장소를 추가해주세요">
+                        <p class="description_info_container_fields_row addr ">
+                          <label class="description_info_container_fields_row_label required"><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
+                          <input class="description_info_container_fields_row_input " type="text" placeholder="장소를 추가해주세요" oninput="checkInputs()">
                         </p>
                         <p class="description_info_container_fields_row date">
-                          <label class="description_info_container_fields_row_label"><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label>
-                          <input class="description_info_container_fields_row_input" type="date">
+                          <label class="description_info_container_fields_row_label required"><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label>
+                          <input class="description_info_container_fields_row_input " type="date" oninput="checkInputs()">
                         </p>
                         <p class="description_info_container_fields_row rate">
                           <label class="description_info_container_fields_row_label"><img src="./images/icons/tagIcon.png" alt="star"><span>평점</span></label>
@@ -72,7 +72,8 @@
               <!-- 폼 바디 영역 -->
               <div class="frmWrite_body">
                 <div class="frmWrite_body_header">
-                  <input class="frmWrite_body_header_input" type="text" placeholder="제목을 입력하세요">
+                  <label for="frmWrite_body_header_input" class="frmWrite_body_header_label required"></label>
+                  <input class="frmWrite_body_header_input" type="text" placeholder="제목을 입력하세요" oninput="checkInputs()">
                 </div>
                 <div class="frmWrite_body_file">
                   <div class="frmWrite_body_file_picture active" id="frmWrite_body_file_picture">
@@ -82,10 +83,12 @@
                   </div>
                 </div>
                 <div class="frmWrite_body_content">
-                  <textarea name="frmWrite_body_content_textarea" class="frmWrite_body_content_textarea"></textarea>
+                  <label for="frmWrite_body_content_textarea" class="frmWrite_body_content_label required"></label>
+                  <textarea name="frmWrite_body_content_textarea required" class="frmWrite_body_content_textarea" oninput="checkInputs()" placeholder="내용을 입력하세요"></textarea>
                 </div>
                 <div class="frmWrite_body_button">
-                  <div class="button deactivated">기록하기</div>
+                  <div class="button deactivated" id="frmWrite_body_button_record">기록하기</div>
+                  <span class="frmWrite_body_button_guide hide">필수 입력사항 : 주소, 날짜, 제목, 내용</span>
                 </div>
               </div>
             </form>
@@ -99,6 +102,11 @@
 		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
   </div>
 
+  <!-- 
+  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  UNDERGROUND
+  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  -->
   <div id="spot" class="spot" onclick="closeModal(event)">
     <div class="spot_body">
       <div class="spot_body_search">

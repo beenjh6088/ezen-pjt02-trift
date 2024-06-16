@@ -86,6 +86,22 @@ body {
   transform: scale(1);
 }
 
+.required {
+  position: relative;
+}
+.required::after {
+  content:'*';
+  width: 8px;
+  height: 16px;
+  color: var(--mainColor);
+  z-index: 1;
+}
+.hide {
+  position: absolute;
+  left: -9999px !important;
+}
+
+
 /* 
 건너뛰기 링크
 */
@@ -159,8 +175,6 @@ gnb
 */
 header .gnb {
   position: relative;
-  /* temp */
-  /* width: 100%; */
   /* border:1px dashed red; */
 }
 header .gnb .highMenus {
@@ -524,7 +538,3 @@ footer {
 	opacity: 0.6;
 }
 
-
-/* 
-spot
-*/
