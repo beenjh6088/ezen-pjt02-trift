@@ -33,8 +33,10 @@ async function setSignatureImage(event) {
   let targetList = targetItem.parentNode.children;
   let targetIndex = Array.from(targetList).indexOf(targetItem)
   let filePath = document.querySelector(`.spot_body_recommend_list_item:nth-child(${targetIndex+1}) .spot_body_recommend_list_item_iamge`).value;
+  let fileCategory = document.querySelector(`.spot_body_recommend_list_item:nth-child(${targetIndex+1}) .spot_body_recommend_list_item_categoryKR`).value;
   let fileContainer = document.querySelector(".description_image_container");
   let fileContainerName = document.querySelector(".description_info_container_spot");
+  let fileContainerCate = document.querySelector(".description_info_container_catg span");
 
   try {
     // fetch를 사용해서 이미지를 가져옴
@@ -42,8 +44,10 @@ async function setSignatureImage(event) {
     // blob은 바이너리 데이터를 다루기 위해 사용. 파일이나 이미지 처리시 필요
     const blob = await response.blob();
 
-    console.log(response)
-    console.log(blob)
+    // console.log(response)
+    // Response {type: 'cors', url: 'https://media.istockphoto.com/id/1373031825/ko/%EC…20&c=N4aY-UbOV5pg051JZg0n_wR6kZO32DB-CsWwLQJxrVE=', redirected: false, status: 200, ok: true, …}
+    // console.log(blob)
+    // Blob {size: 42577, type: 'image/jpeg'}
 
     // Blob 객체를 File 객체로 변환. readAsDataURL를 사용하기 위해 File객체로 변환
     file = new File([blob], fileName, {type: blob.type});
@@ -65,6 +69,7 @@ async function setSignatureImage(event) {
 
     // 새로운 시그니처 사진 이름 추가
     fileContainerName.innerText = fileName;
+    fileContainerCate.innerText = fileCategory;
   }catch(error) {
     console.log("Error loading image : ", error);
   }finally {
@@ -141,11 +146,14 @@ function filter() {
   for(let i = 0; i < items.length; i++) {
     let keywordKR = (items[i].querySelector(".spot_body_recommend_list_item_keywordKR")) ? (items[i].querySelector(".spot_body_recommend_list_item_keywordKR").value.toLowerCase()) : "";
     let keywordEN = (items[i].querySelector(".spot_body_recommend_list_item_keywordEN")) ? (items[i].querySelector(".spot_body_recommend_list_item_keywordEN").value.toLowerCase()) : "";
-    let keywordCATG = (items[i].querySelector(".spot_body_recommend_list_item_category")) ? (items[i].querySelector(".spot_body_recommend_list_item_category").value.toLowerCase()) : "";
+    let catgegoryKR = (items[i].querySelector(".spot_body_recommend_list_item_categoryKR")) ? (items[i].querySelector(".spot_body_recommend_list_item_categoryKR").value.toLowerCase()) : "";
+    let catgegoryEN = (items[i].querySelector(".spot_body_recommend_list_item_categoryKR")) ? (items[i].querySelector(".spot_body_recommend_list_item_categoryKR").value.toLowerCase()) : "";
     if(
       keywordKR.includes(search) ||
       keywordEN.includes(search) ||
-      keywordCATG.includes(search)
+      catgegoryKR.includes(search) ||
+      catgegoryEN.includes(search) 
+
     ) {
       items[i].style.display = "block";
     }else {
