@@ -59,7 +59,7 @@ class Card extends HTMLElement {
     }
 
     this.innerHTML = `
-      <div class="card" ondblclick="callCardDetail(event);">
+      <div class="card" ondblclick="oepnCardDetail(event);">
         <div class="cardTop" style="background: url('${image}') no-repeat;">
         ${strHowManyPics}
           <div class="cardTop_profile">

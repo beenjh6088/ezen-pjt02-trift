@@ -592,6 +592,7 @@ modal
   /* height: 900px; */
   background-color: var(--realWhiteColor);
   padding: 111px 75px;
+  border-radius: 15px;
 }
 .modal_container_contents {
   display: flex;
@@ -599,6 +600,14 @@ modal
   justify-content: center;
   align-items: center;
   gap: 36px;
+}
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+}
+.modal .close:active {
+  transform: scale(0.96);
 }
 .modal .title {
   width: 100%;
