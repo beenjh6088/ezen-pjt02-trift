@@ -556,7 +556,7 @@ modal
 .modal.active {
   display: block;
 }
-.modal_contents {
+.modal_container {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -565,4 +565,252 @@ modal
   /* temporary height value */
   height: 900px;
   background-color: var(--realWhiteColor);
+  padding: 111px 75px;
+}
+.modal .title {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.modal .userInfo {
+  width: 100%;
+}
+.modal .frmWrite_head {
+  width: 100%;
+  /* padding: 50px 0; */
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_head .description {
+  width: 100%;
+  /* height: 300px; */
+  height: 270px;
+  background-color: #FBFBFB;
+  border: 1px solid #CCCCCC;
+  display: flex;
+  border-radius: 18px;
+}
+.modal .frmWrite_head .description_image {
+  flex-grow: 1;
+  /* border: 1px dashed red; */
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+}
+.modal .frmWrite_head .description_image_container {
+  background-color: transparent;
+  position: absolute;
+  right: 52.5px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  width: 280px;
+  height: 180px;
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_head .description_image_container_addButton {
+  width: 280px;
+  height: 180px;
+  background-color: var(--lightGrayColor);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  position: absolute;
+}
+.modal .frmWrite_head .description_image_container_addButton:active {
+  transform: scale(0.98);
+}
+.modal .frmWrite_head .description_image_container_signatureImage {
+  width: 280px;
+  height: 180px;
+  background-color: var(--lightGrayColor);
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center center;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  position: absolute;
+}
+.modal .frmWrite_head .description_image_container_signatureImage:active{
+  transform: scale(0.98);
+}
+.modal .frmWrite_head .description_image_container_addButton_addText {
+  display: block;
+  width: 80px;
+  height: 80px;
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_head .description_image_container_addButton_fileDialog { display:  none; }
+.modal .frmWrite_head .description_info {
+  flex-grow: 1;
+  /* border: 1px dashed red; */
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left : 52.5px;
+}
+.modal .frmWrite_head .description_info_container {
+  background-color: transparent;
+}
+.modal .frmWrite_head .description_info_container_catg {
+  margin-bottom: 10px;
+}
+.modal .frmWrite_head .description_info_container_catg span {
+  font-size: 15px;
+  font-weight: 500;
+}
+.modal .frmWrite_head .description_info_container_spot {
+  margin-bottom: 20px;
+}
+.modal .frmWrite_head .description_info_container_spot a {
+  font-size: 24px;
+  color: #999;
+}
+.modal .frmWrite_head .description_info_container_fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 15px;
+}
+.modal .frmWrite_head .description_info_container_fields_row {
+  flex-grow: 1;
+  display: flex;
+  gap: 20px;
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_head .description_info_container_fields_row img {
+  width: 12px;
+  height: 12px;
+  object-fit: cover;
+}
+.modal .frmWrite_head .description_info_container_fields_row.addr img {
+  object-position: 0 0;
+}
+.modal .frmWrite_head .description_info_container_fields_row.date img {
+  object-position: -14px 0;
+}
+.modal .frmWrite_head .description_info_container_fields_row.rate img {
+  object-position: -28px 0;
+}
+.modal .frmWrite_head .description_info_container_fields_row_label {
+  /* border: 1px dashed blue; */
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.modal .frmWrite_head .description_info_container_fields_row_label.required:after {
+  position: absolute;
+  top: 0;
+  /* right: 0; */
+  left: 0px;
+  left: 68px;
+}
+.modal .frmWrite_head .description_info_container_fields_row_input {
+  display: inline-block;
+  /* border: 1px dashed blue; */
+  flex-grow: 1;
+  width: 180px;
+  border: none;
+  outline: none;
+  color: #666;
+  font-family: 'Noto Sans KR';
+}
+
+.modal .frmWrite_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 48px;
+  /* border: 1px dashed green; */
+
+}
+.modal .frmWrite_body_header {
+  width: 100%;
+  /* border: 1px dashed green; */
+}
+.modal .frmWrite_body_header_input {
+  height: 80px;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  color: #999;
+  padding: 0 8px;
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_body_header_label.required:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal .frmWrite_body_file {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  border: 1px solid #CCC;
+  background-color: #FBFBFB;
+  border-radius: 18px;
+  padding: 20px 40px;
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_body_file_picture {
+  width: 125px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 0;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_body_file_picture:active {
+  transform: scale(0.98);
+}
+.modal .frmWrite_body_file_picture_img {
+  width: 30px;
+}
+.modal .frmWrite_body_file_picture_text {
+  color: #666;
+  font-size: 14px;
+}
+.modal .frmWrite_body_file_picture_fileDialog {
+  display: none;
+}
+.modal .frmWrite_body_content {
+  width: 100%;
+}
+.modal .frmWrite_body_content_label {
+  width : 8px;
+  height: 16px;
+  /* border: 1px dashed red; */
+}
+.modal .frmWrite_body_content_label.required:after {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+.modal .frmWrite_body_content_textarea {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: 18px;
+  background-color: #FBFBFB;
+  border: 1px solid #CCCCCC;
+  padding: 8px;
+  outline: none;
 }

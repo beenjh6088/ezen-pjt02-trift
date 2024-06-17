@@ -25,11 +25,11 @@ REVISION DESC :
 class Card extends HTMLElement {
   connectedCallback() {
     const sampleImage = [
-      '../../images/banner/banner_kor1.png',
-      '../../images/banner/banner_kor2.png',
-      '../../images/banner/banner_kor3.png',
-      '../../images/banner/banner_main1.png',
-      '../../images/banner/banner_main2.png'
+      '/images/banner/banner_kor1.png',
+      '/images/banner/banner_kor2.png',
+      '/images/banner/banner_kor3.png',
+      '/images/banner/banner_main1.png',
+      '/images/banner/banner_main2.png'
     ]
 
     let userName = this.getAttribute("userName") ? this.getAttribute("userName") : "Enter a Username";
@@ -37,7 +37,7 @@ class Card extends HTMLElement {
     let title = this.getAttribute("title") ? this.getAttribute("title") : "Enter a Title";
     let subtitle = this.getAttribute("subtitle") ? this.getAttribute("subtitle") : "Enter a Subtitle";
     let likeAmount = (this.getAttribute("likeAmount") == null || isNaN(this.getAttribute("likeAmount"))) ? 0 : parseInt(this.getAttribute("likeAmount")) >= 1000 ? Math.floor(parseInt(this.getAttribute("likeAmount"))/1000)+"K" : parseInt(this.getAttribute("likeAmount"));
-    let image = this.getAttribute("image") ? this.getAttribute("image") : "../../images/common/default.png";
+    let image = this.getAttribute("image") ? this.getAttribute("image") : "/images/common/default.png";
     let rating = (this.getAttribute("rating") == null || isNaN(this.getAttribute("rating")) == true) ? 0 : parseInt(this.getAttribute("rating")) > 5 ? 5 : parseInt(this.getAttribute("rating"));
     let strRating = "";
     // 새로고침할 때마다 변수값이 바뀌는 이슈
@@ -47,10 +47,10 @@ class Card extends HTMLElement {
     
     // 별점 매기기
     for(let i = 0; i < rating; i++){
-      strRating += `<li><img class="cardBottom_rating_star" src="../../images/icons/starF.png" alt="rating"></li>`
+      strRating += `<li><img class="cardBottom_rating_star" src="/images/icons/starF.png" alt="rating"></li>`
     }
     for(let i = rating; i < 5; i++) {
-      strRating += `<li><img class="cardBottom_rating_star" src="../../images/icons/starE.png" alt="rating"></li>`
+      strRating += `<li><img class="cardBottom_rating_star" src="/images/icons/starE.png" alt="rating"></li>`
     }
 
     // 조각 이미지 세팅.

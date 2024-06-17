@@ -230,7 +230,4 @@ function callCardDetail(event) {
   for(let i = 0; i < deck.length; i++) {
 
   }
-  // pick.querySelector(".modal").classList.add("active");
-  // let test = document.querySelector(".modal", pick)
-  // console.log(test)
 }
