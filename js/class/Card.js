@@ -28,11 +28,12 @@ class Card extends HTMLElement {
     let title = this.getAttribute("title") ? this.getAttribute("title") : "Enter a Title";
     let subtitle = this.getAttribute("subtitle") ? this.getAttribute("subtitle") : "Enter a Subtitle";
     let likeAmount = isNaN(this.getAttribute("likeAmount")) ? 0 : parseInt(this.getAttribute("likeAmount"));
-    // console.log(likeAmount)
+    let image = this.getAttribute("image") ? this.getAttribute("image") : "../../images/cardImage.png";
+    console.log(image)
     
     this.innerHTML = `
       <div class="card" ondblclick="callCardDetail(event);">
-        <div class="cardTop">
+        <div class="cardTop" style="background: url('${image}') no-repeat;">
           <div class="cardTop_profile">
             <!-- <a href="#"> -->
               <img class="cardTop_profile_img"src="../../images/icons/accountIcon.png" alt="profileImg">
@@ -65,6 +66,7 @@ class Card extends HTMLElement {
         </div>
       </div>
     `
+
 
   }
 }

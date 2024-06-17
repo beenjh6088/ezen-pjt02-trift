@@ -97,7 +97,7 @@ function toggleHoveringOnGnb() {
   const highMenus = document.querySelectorAll(".highMenus_item");
   const midContents = document.querySelectorAll(".midContent");
   const midMenus = document.querySelectorAll(".middleMenus_item")
-
+  
   // highMenus_item mouseover 이벤트
   highMenus.forEach(highmenu => {
     let highmenu_item = document.getElementById(highmenu.dataset.tab);
@@ -220,4 +220,17 @@ function getPageName() {
 
 function callCardDetail(event) {
   console.log('callCardDetail')
+  let pick = event.target.parentNode.parentNode;
+  let deck = pick.parentNode.children;
+  let index = Array.from(deck).indexOf(pick);
+  console.log(pick)
+  console.log(deck)
+  console.log(`index : ${index}`)
+  // deck.forEach((c) => {c.querySelector('.modal').classList.remove("active")});
+  for(let i = 0; i < deck.length; i++) {
+
+  }
+  // pick.querySelector(".modal").classList.add("active");
+  // let test = document.querySelector(".modal", pick)
+  // console.log(test)
 }
