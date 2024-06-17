@@ -23,7 +23,7 @@ REVISION DESC :
 */
 
 let userArr = [];
-const url = `${window.location.protocol+"//"+window.location.host+"/"}`;
+let url = `${window.location.protocol+"//"+window.location.host+"/"}`;
 let isLogin = false;
 let strangers, members;
 
@@ -216,4 +216,3 @@ function getPageName() {
   pageName = strPageName[strPageName.length-1].split("?")[0];
   return pageName;
 }
-
