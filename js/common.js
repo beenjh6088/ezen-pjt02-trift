@@ -217,17 +217,34 @@ function getPageName() {
   return pageName;
 }
 
-
-function callCardDetail(event) {
+// Card Detail 모달창 열기
+function oepnCardDetail(event) {
   console.log('callCardDetail')
-  let pick = event.target.parentNode.parentNode;
+  let pick = event.target.closest("tft-card");
   let deck = pick.parentNode.children;
   let index = Array.from(deck).indexOf(pick);
-  console.log(pick)
-  console.log(deck)
-  console.log(`index : ${index}`)
-  // deck.forEach((c) => {c.querySelector('.modal').classList.remove("active")});
-  for(let i = 0; i < deck.length; i++) {
+  const cardDetail = document.querySelector(".modal.cardDetail");
+  let title = pick.getAttribute("title");
+  let subtitle = pick.getAttribute("subtitle");
+  let userName = pick.getAttribute("userName");
+  let likeAmount = pick.getAttribute("likeAmount");
+  let image = pick.getAttribute("image") ? pick.getAttribute("image") : "";
 
-  }
+  console.log(pick)
+  // console.log(deck)
+  // console.log(`index : ${index}`)
+  
+  // deck.forEach((c) => {c.querySelector('.modal').classList.remove("active")});
+  // for(let i = 0; i < deck.length; i++) {}
+  console.log(cardDetail)
+  // 모달창으로 데이터 보내기. send data to modal(cardDetail)
+  document.querySelector(".title", cardDetail).innerHTML = title;
+
+  cardDetail.classList.add("active");
+  
+}
+
+// Card Detail 모달창 닫기
+function closeCardDetail() {
+  document.querySelector(".modal.cardDetail").classList.remove("active");
 }

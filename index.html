@@ -60,12 +60,12 @@
   
         <!-- 인기 기록 폴더 -->
         <div class="popular">
-          <div class="popular_container">
+          <div class="popular_container ">
             <div class="popular_container_title">
               <p>인기 기록 폴더</p>
             </div>
             <ul class="windowThumbnails">
-              <li class="windowThumbnail">01</li>
+              <li class="windowThumbnail"><div data-include-file="html/common/folder.html" class="includeJs"></li>
               <li class="windowThumbnail">02</li>
               <li class="windowThumbnail">03</li>
               <li class="windowThumbnail">04</li>
@@ -87,11 +87,12 @@
 		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
   </div>
 
-  <div class="modal cardDetail active">
+  <div class="modal cardDetail ">
     <div class="modal_container">
+      <a href="javascript:;" class="close" onclick="closeCardDetail()"><img src="images/icons/closeBtn.png" alt=""></a>
       <div class="modal_container_contents">
         <h1 class="title">ss</h1>
-        <div class="userInfo"></div>
+        <div class="userInfo">dddd</div>
         <div class="frmWrite_head">
           <div class="description">
             <div class="description_image">
