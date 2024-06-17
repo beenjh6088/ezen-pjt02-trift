@@ -30,6 +30,7 @@ REVISION DESC :
   --lightGrayColor : #efefef;
   --whiteGrayColor : #f0f0f0;
   --realWhiteColor : #fff;
+  --backgroundBlckColor : rgba(40,40,40,0.7);
 
   /* fontSize */
   --normalTextSize : 16px;
@@ -278,7 +279,7 @@ header .gnb .midContent .middleMenus .middleMenus_item .lowBody .lowImage .bgTex
 }
 header .gnb .midContent .middleMenus .middleMenus_item .lowBody .lowImage .bgText span {
   display: block;
-  background-color: rgba(40,40,40,0.7);
+  background-color: var(--backgroundBlckColor);
   color: #EBEBEB;
   font-size: 24px;
   font-weight: bold;
@@ -538,3 +539,25 @@ footer {
 	opacity: 0.6;
 }
 
+
+/* 
+modal
+*/
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--backgroundBlckColor);
+  display: none;
+}
+.modal.active {
+  display: block;
+}
+.modal_contents{
+  width: 900px;
+  /* temporary height */
+  height: 900px;
+  background-color: var(--realWhiteColor);
+}

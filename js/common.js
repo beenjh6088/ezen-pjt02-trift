@@ -216,3 +216,8 @@ function getPageName() {
   pageName = strPageName[strPageName.length-1].split("?")[0];
   return pageName;
 }
+
+
+function callCardDetail(event) {
+  console.log('callCardDetail')
+}

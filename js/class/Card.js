@@ -31,7 +31,7 @@ class Card extends HTMLElement {
     // console.log(likeAmount)
     
     this.innerHTML = `
-      <div class="card" ondblclick="">
+      <div class="card" ondblclick="callCardDetail(event);">
         <div class="cardTop">
           <div class="cardTop_profile">
             <!-- <a href="#"> -->
