@@ -29,9 +29,9 @@ class Card extends HTMLElement {
     let subtitle = this.getAttribute("subtitle") ? this.getAttribute("subtitle") : "Enter a Subtitle";
     let likeAmount = isNaN(this.getAttribute("likeAmount")) ? 0 : parseInt(this.getAttribute("likeAmount"));
     // console.log(likeAmount)
-
+    
     this.innerHTML = `
-      <div class="card">
+      <div class="card" ondblclick="">
         <div class="cardTop">
           <div class="cardTop_profile">
             <!-- <a href="#"> -->

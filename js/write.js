@@ -99,6 +99,7 @@ function punInOutPictures() {
 
       // 이미지는 최대 5개까지 포스트 가능
       if(cnt == limit) {
+        alert("이미지는 최대 5개까지 올릴 수 있습니다.")
         return;
       }
 
