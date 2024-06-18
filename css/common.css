@@ -102,7 +102,52 @@ body {
   position: absolute;
   left: -9999px !important;
 }
+/* 
+roundedRectangle
+*/
+.roundedRectangle {
+  display: inline;
+  background-color: var(--mainColor);
+  font-size: 14;
+  padding: 3px 8px 3px 25px;
+  border-radius: 13px;
+  color: var(--lightWhiteColor);
+  position: relative;
+}
+.roundedRectangle:before {
+  content:'';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 8px;
+  top: 50%;
+  transform: translate(0,-50%);
+  background: url(../images/icons/heartWhite.png) no-repeat center/cover;
+}
+.more {
+  display: inline-block;
+  width: 10px;
+  height: 25px;
+  background: url(../images/icons/more.png) no-repeat center/cover;
+  cursor: pointer;
+}
+.moreDetail {
+  position: absolute;
+  top: 0;
+  right: -160px;
+  background-color: var(--realWhiteColor);
+  transition: all 0.5s;
+  display: none;
+}
+.moreDetail.active {
+  display: block;
+  right: -140px;
 
+}
+.moreDetail_list_item {
+  padding: 12px 24px;
+  border-bottom: 1px solid #ddd;
+}
 
 /* 
 건너뛰기 링크
@@ -614,8 +659,34 @@ modal
   font-size: 30px;
   font-weight: bold;
 }
-.modal .userInfo {
+.modal .articleInfo {
   width: 100%;
+  display: flex;
+  /* border: 1px dashed red; */
+}
+.modal .articleInfo .left, 
+.modal .articleInfo .right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+  /* border: 1px dashed blue; */
+}
+.modal .articleInfo .left { justify-content: start;}
+.modal .articleInfo .right {
+  justify-content: end;
+  padding-right: 10px;
+  position: relative;
+}
+.modal .articleInfo .roundedRectangle {
+  background-color: #efefef;
+  color: #333;
+}
+.modal .articleInfo .roundedRectangle.like::before {
+  background: url(../images/icons/heart.png) no-repeat center/cover;
+}
+.modal .articleInfo .roundedRectangle.view::before {
+  background: url(../images/icons/eye.png) no-repeat center/cover;
 }
 
 /* 
@@ -867,13 +938,3 @@ write Form
 }
 
 
-/* 
-roundedRectangle
-*/
-.roundedRectangle {
-  display: inline;
-  background-color: var(--mainColor);
-  font-size: 14;
-  padding: 3px 8px 3px 25px;
-  border-radius: 13px;
-}

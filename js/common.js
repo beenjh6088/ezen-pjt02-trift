@@ -81,6 +81,7 @@ function setAbsLink() {
 // 이벤트 넣어주기
 function makeEvents() {
   let pageName = getPageName();
+  let moreDetail = document.querySelector(".moreDetail");
 
   toggleHoveringOnGnb();
   letsMoveWithMouse();
@@ -88,6 +89,9 @@ function makeEvents() {
 
   if(pageName == "write.html"){
     punInOutPictures();
+  }
+  if(moreDetail) {
+    openMoreDetail(moreDetail);
   }
 }
 
@@ -247,4 +251,23 @@ function oepnCardDetail(event) {
 // Card Detail 모달창 닫기
 function closeCardDetail() {
   document.querySelector(".modal.cardDetail").classList.remove("active");
+}
+
+// 더보기창 열기
+function openMoreDetail(moreDetail) {
+  // document.querySelector(".more").click(function() { console.log(1) })
+  
+  // 더보기창 열기
+  document.querySelector(".more").addEventListener("click", function() {
+    moreDetail.classList.add("active");
+  });
+
+  // 더보기창 닫기
+  window.addEventListener("click", function(e) {
+    let hasMoreDetail = ( e.target.closest(".moreDetail") || e.target.closest(".more") )? true : false;
+    if(!hasMoreDetail) {
+      moreDetail.classList.remove("active");
+    }
+  })
+
 }

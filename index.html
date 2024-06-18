@@ -91,25 +91,32 @@
     <div class="modal_container">
       <a href="javascript:;" class="close" onclick="closeCardDetail()"><img src="images/icons/closeBtn.png" alt=""></a>
       <div class="modal_container_contents">
-        <h1 class="title">ss</h1>
+        <h1 class="title"></h1>
         <div class="articleInfo">
           <div class="left">
             <img class="articleInfo_profileImage"src="/images/icons/accountIcon.png" alt="profileImage">
             <div class="articleInfo_writer">
-              <span class="articleInfo_writer_name">USERNAME</span>
-              <span class="articleInfo_writer_postingDate">5 DAYS AGO</span>
+              <p class="articleInfo_writer_name">USERNAME</p>
+              <p class="articleInfo_writer_postingDate">5 DAYS AGO</p>
             </div>
           </div>
           <div class="right">
             <span class="roundedRectangle like">21</span>
             <span class="roundedRectangle view">2,156</span>
+            <span class="more" ></span>
+            <div class="moreDetail ">
+              <ul class="moreDetail_list">
+                <li class="moreDetail_list_item"><img src="/images/icons/share.png" alt="share"><span>공유하기</span></li>
+                <li class="moreDetail_list_item"><img src="/images/icons/alert-circle.png" alt="alert-circle"><span>신고하기</span></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="frmWrite_head">
           <div class="description">
             <div class="description_image">
               <div class="description_image_container">
-                <div class="description_image_container_addButton button" onclick="openModal()">
+                <div class="description_image_container_addButton button">
                   <img class="description_image_container_addButton_addText" src="./images/icons/bigPlus.png" alt="bigPlus"></img>
                   <input type="file" class="description_image_container_addButton_fileDialog">
                 </div>
@@ -118,14 +125,14 @@
             <div class="description_info">
               <div class="description_info_container">
                 <p class="description_info_container_catg"><span>카테고리</span></p>
-                <p class="description_info_container_spot"><a href="javascript:;" onclick="openModal()">장소를 추가해주세요</a></p>
+                <p class="description_info_container_spot"><a href="javascript:;">장소를 추가해주세요</a></p>
                 <div class="description_info_container_fields">
                   <p class="description_info_container_fields_row addr ">
-                    <label class="description_info_container_fields_row_label required"><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
+                    <label class="description_info_container_fields_row_label "><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
                     <input class="description_info_container_fields_row_input " type="text" placeholder="장소를 추가해주세요" oninput="checkInputs()">
                   </p>
                   <p class="description_info_container_fields_row date">
-                    <label class="description_info_container_fields_row_label required"><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label>
+                    <label class="description_info_container_fields_row_label "><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label>
                     <input class="description_info_container_fields_row_input " type="date" oninput="checkInputs()">
                   </p>
                   <p class="description_info_container_fields_row rate">
@@ -150,8 +157,8 @@
             </div>
           </div>
           <div class="frmWrite_body_content">
-            <label for="frmWrite_body_content_textarea" class="frmWrite_body_content_label required"></label>
-            <textarea name="frmWrite_body_content_textarea required" class="frmWrite_body_content_textarea" oninput="checkInputs()" placeholder=""></textarea>
+            <label for="frmWrite_body_content_textarea" class="frmWrite_body_content_label "></label>
+            <textarea name="frmWrite_body_content_textarea " class="frmWrite_body_content_textarea" oninput="checkInputs()" placeholder=""></textarea>
           </div>
         </div>
       </div>
