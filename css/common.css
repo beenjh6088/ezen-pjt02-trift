@@ -24,12 +24,13 @@ REVISION DESC :
 */
 :root {
   /* color */
-  --mainColor : #e00d32;
-  --subColor : #ffed88;
-  --basicTextColor : #333;
-  --lightGrayColor : #efefef;
-  --whiteGrayColor : #f0f0f0;
-  --realWhiteColor : #fff;
+  --mainColor           : #e00d32;
+  --subColor            : #ffed88;
+  --basicTextColor      : #333;
+  --lightGrayColor      : #efefef;
+  --whiteGrayColor      : #f0f0f0;
+  --realWhiteColor      : #fff;
+  --lightWhiteColor     : #fbfbfb;
   --backgroundBlckColor : rgba(40,40,40,0.7);
 
   /* fontSize */
@@ -165,7 +166,6 @@ logo
 header .logo{
 	width:188px;
 	position:absolute;
-	z-index:1;
 }
 header .logo img{
 	width:100%;
@@ -198,7 +198,7 @@ header .gnb .highMenus .highMenus_item > a {
   color: var(--basicTextColor);
 }
 header .gnb .highMenus .highMenus_item > a:hover {
-  background-color: #fbfbfb;
+  background-color: var(--lightWhiteColor);
 }
 header .gnb .midContent {
   width: 100%;
@@ -416,7 +416,7 @@ cards
 	width:297px;
 	height:156px;
 	padding:20px 25px;
-	background-color: #fbfbfb;
+	background-color: var(--lightWhiteColor);
 	border-radius: 0 0 15px 15px;
 	position:relative;
 	border:1px solid var(--lightGrayColor);
@@ -485,7 +485,7 @@ folder
 }
 .folderTop {
   width: 100%; height: 380px;
-  background-color: #fbfbfb;
+  background-color: var(--lightWhiteColor);
   border: 1px solid #dddddd;
   border-radius: 15px;
 }
@@ -636,7 +636,7 @@ write Form
   width: 100%;
   /* height: 300px; */
   height: 270px;
-  background-color: #FBFBFB;
+  background-color: var(--lightWhiteColor);
   border: 1px solid #CCCCCC;
   display: flex;
   border-radius: 18px;
@@ -811,7 +811,7 @@ write Form
   align-items: center;
   gap: 26px;
   border: 1px solid #CCC;
-  background-color: #FBFBFB;
+  background-color: var(--lightWhiteColor);
   border-radius: 18px;
   padding: 20px 40px;
   /* border: 1px dashed red; */
@@ -860,8 +860,20 @@ write Form
   width: 100%;
   height: 280px;
   border-radius: 18px;
-  background-color: #FBFBFB;
+  background-color: var(--lightWhiteColor);
   border: 1px solid #CCCCCC;
   padding: 8px;
   outline: none;
+}
+
+
+/* 
+roundedRectangle
+*/
+.roundedRectangle {
+  display: inline;
+  background-color: var(--mainColor);
+  font-size: 14;
+  padding: 3px 8px 3px 25px;
+  border-radius: 13px;
 }
