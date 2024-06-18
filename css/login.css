@@ -1,0 +1,44 @@
+.container {
+	width: 1200px;
+	height: 834px;
+	margin:0 auto;
+}
+.logo {
+	height: 270px;
+}
+.logo>h1>a>img {
+	width:300px;
+	margin-left:450px;
+	margin-top:136px;
+}
+form {
+	height:500px;
+}
+.form_contents {
+	height:180px;
+}
+.form_contents>p{
+	width:700px;
+	height:80px;
+	border:1px solid #ccc;
+	border-radius:50px;
+	margin-left:250px;
+	margin-bottom:20px;
+}
+.form_contents>p>span {
+	display:inline-block;
+	width:60px;
+	height:30px;
+	font-size:24px;
+	font-weight:bold;
+	margin-top:22px;
+	margin-left:46px;
+	text-align: center;
+	color:#E00D32;
+}
+.form_contents>p>input{
+	border:none;
+}
+.guide {
+	height:64px;
+}

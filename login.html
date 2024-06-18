@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trip as a Gift in your life</title>
   <link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/login.css">
   <script src="json/user.json" ></script>
   <script src="js/jquery-1.12.3.js"></script>
   <script defer src="js/common.js"></script>
@@ -12,8 +13,27 @@
 	<link rel="icon" href="logo_trift.ico">
 </head>
 <body>
-  this is login page
-  <h1 class="logo"><a href="./index.html">go to main</a></h1>
-  <input type="button" value="login" class="login" onclick="login(event, checkIsLogin)">
+	<div class="container">	
+			<div class="logo">
+				<h1><a href="./index.html"><img src="images/CI_horizontal.png" alt="메인로고"/></a></h1>
+			</div>
+			<form>
+				<div class="form_contents">
+					<p><span>ID</span><input type="text" name="id"/></p>
+					<p><span>PW</span><input type="password" name="pwd"/></p>
+				</div>
+				<div class="buttons">
+					<p><input type="button" value="로그인하기" name="login" onclick="login()"/></p>
+					<p><img src="images/icons/naver.png" alt="네이버"/>
+						<input type="button" value="네이버로 로그인하기" name="naverlogin" onclick="login()"/></p>
+					<p><img src="images/icons/kakao.png" alt="네이버"/>
+						<input type="button" value="카카오톡으로 로그인하기" name="kalogin" onclick="login()"/></p>
+				</div>
+			</form>
+			<div class="guide">
+				<p>비밀번호를 잊어버리셨나요?</p>
+				<p>계정이 없으신가요?<a href="join.html">회원가입</a></p>
+			</div>
+	</div>	
 </body>
 </html>
