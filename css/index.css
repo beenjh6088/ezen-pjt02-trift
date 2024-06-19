@@ -44,6 +44,9 @@ slider
 /* 
 latest
 */
+.popular {
+	margin-bottom: 100px;
+  }
 .latest {
   width: 100%;
   height: 662px;

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trip as a Gift in your life</title>
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/history.css">
   <script defer src="json/user.json" ></script>
   <script defer src="js/jquery-1.12.3.js"></script>
   <script defer src="js/common.js"></script>
@@ -18,31 +19,70 @@
   </script>
 </head>
 <body>
-  <div class="container">
-    <!-- header -->
-    <header id="header" data-include-file="html/common/header.html" class="includeJs"></header>
-    <div class="stats">
-      <div class="stats_container">
-        <div class="stats_container_title">
-          <p>내 여행 통계</p>
+  <main id="main">
+    <div class="center">
+      <div class="container">
+          <!-- header -->
+          <header id="header" data-include-file="html/common/header.html" class="includeJs"></header>
+          
+          <!-- 내 여행 통계 -->
+          <div class="stats">
+            <div class="stats_container">
+              <div class="stats_container_title">
+                <p>내 여행 통계</p>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- 최근 기록 -->
+          <div class="latest">
+            <div class="latest_container">
+              <div class="latest_container_title">
+                <p>최근 기록</p>
+                <img src="../../images/icons/chevron-right-big.png" alt="chevron-right">
+              </div>
+              <div class="cards">
+                <tft-card userName="Tony"         likeAmount="0"      title="메롱ㅎ" subtitle="메롱의 어원" rating="3"></tft-card>
+                <tft-card userName="Ironman"      likeAmount="01"     title="야호ㅎ" subtitle="야호의 기원" rating="2" image="images/banner/banner_kor1.png"></tft-card>
+                <tft-card userName="Anthony"      likeAmount="둘"     title="쩌쩌러" subtitle="쩌쩌러쩌쩌러" rating="3"></tft-card>
+                <tft-card userName="nobinjunh"    likeAmount="03"     title="쪼쪼로" subtitle="쪼쪼로쪼쪼로"image="images/banner/banner_kor2.png"></tft-card>
+                <tft-card userName="boa"          likeAmount="444"      title="아캔두" subtitle="아캔두디스올데잇" rating="5"></tft-card>
+                <tft-card userName="zzozzoro"     likeAmount="5555"     title="디스올" subtitle="아캔두디스올데잇" rating="55"></tft-card>
+                <tft-card userName="cheocheoreo"  likeAmount="6"      title="데이즈" subtitle="아캔두디스올데잇"></tft-card>
+                <tft-card userName="captain"      likeAmount="7"      title="풋잇백" subtitle="make the most out of what you ve been thinking"></tft-card>
+                <tft-card userName="noble"        likeAmount="8"      title="아만다" subtitle="한국어의 아,맞다!는 아만다"></tft-card>
+                <tft-card userName="mavel"        likeAmount="9"      title="시맛따" subtitle="아차차차.."></tft-card>
+                <tft-card userName="Sabin"        likeAmount="10"     title="이쿠조" subtitle="있어있어 할수있어! 좀더 힘을 내 조금만 더 달려가하하아아"></tft-card>
+                <tft-card userName="Henrry"       title="ㅇㅇㅇ" subtitle="he is my friend"></tft-card>
+              </div>
+            </div>
+          </div>
+          <!-- // latest -->
+
+          <!-- 기록 폴더 -->
+          <div class="record">
+            <div class="record_container">
+              <div class="record_container_title">
+                <p>기록 폴더</p>
+                <img src="../../images/icons/chevron-right-big.png" alt="chevron-right">
+              </div>
+              <ul class="windowThumbnails">
+                <li class="windowThumbnail"><div data-include-file="html/common/folder.html" class="includeJs"></li>
+                <li class="windowThumbnail"><div data-include-file="html/common/folder.html" class="includeJs"></li>
+                <li class="windowThumbnail"><div data-include-file="html/common/folder.html" class="includeJs"></li>
+                <li class="windowThumbnail"><div data-include-file="html/common/folder.html" class="includeJs"></li>
+                <li class="windowThumbnail"><div data-include-file="html/common/folder.html" class="includeJs"></li>
+                <li class="windowThumbnail"><div data-include-file="html/common/folder.html" class="includeJs"></li>
+              </ul>
+            </div>
+          </div>
+          <!-- // record -->
         </div>
-      </div>
     </div>
-    <div class="latest">
-      <div class="latest_container">
-        <div class="latest_container_title">
-          <p>최근 기록</p>
-          <img src="../../images/icons/chevron-right-big.png" alt="chevron-right">
-        </div>
-      </div>
-    </div>
-    <div class="folder">
-      <div class="folder_container">
-        <div class="folder_container_title">
-          <p>기록 폴더</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  
+    <!-- footer -->
+		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
+  </main>
 </body>
 </html>
