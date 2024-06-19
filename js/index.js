@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
-	aWidth = document.querySelector('.slider_list').offsetWidth;
+	aWidth = window.innerWidth;
 	$('.slider_list').width(aWidth*3);
 	$('.slider_list_image').width(aWidth);
 	window.addEventListener('resize',function(){
-		aWidth = document.querySelector('.slider_list').offsetWidth;
+		aWidth = window.innerWidth;
 		$('.slider_list').width(aWidth*3);
 		$('.slider_list_image').width(aWidth);
 	})
