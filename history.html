@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Trip as a Gift in your life</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script defer src="json/user.json" ></script>
+  <script defer src="js/jquery-1.12.3.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/class.js"></script>
+  <script defer src="js/login.js"></script>
+	<link rel="icon" href="logo_trift.ico">
+  <script>
+    window.onload = function() {
+      init();
+    }
+  </script>
 </head>
 <body>
-  <h1>history page</h1>
-  <a href="./index.html">go to main</a>
+  <div class="container">
+    <!-- header -->
+    <header id="header" data-include-file="html/common/header.html" class="includeJs"></header>
+    <div class="stats">
+      <div class="stats_container">
+        <div class="stats_container_title">
+          <p>내 여행 통계</p>
+        </div>
+      </div>
+    </div>
+    <div class="latest">
+      <div class="latest_container">
+        <div class="latest_container_title">
+          <p>최근 기록</p>
+          <img src="../../images/icons/chevron-right-big.png" alt="chevron-right">
+        </div>
+      </div>
+    </div>
+    <div class="folder">
+      <div class="folder_container">
+        <div class="folder_container_title">
+          <p>기록 폴더</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
