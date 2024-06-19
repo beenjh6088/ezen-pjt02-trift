@@ -15,11 +15,11 @@ form {
 	height:500px;
 }
 .form_contents {
-	height:180px;
+	height:200px;
 }
 .form_contents>p{
 	width:700px;
-	height:80px;
+	height:90px;
 	border:1px solid #ccc;
 	border-radius:50px;
 	margin-left:250px;
@@ -27,7 +27,7 @@ form {
 }
 .form_contents>p>span {
 	display:inline-block;
-	width:60px;
+	width:80px;
 	height:30px;
 	font-size:24px;
 	font-weight:bold;
@@ -36,8 +36,57 @@ form {
 	text-align: center;
 	color:#E00D32;
 }
+.form_contents>p>span:after {
+	content:"|";
+	margin-left :30px;
+	color:#ccc;
+}
 .form_contents>p>input{
+	width:500px;
+	height:80px;
 	border:none;
+	outline:none;
+	font-size:24px;
+}
+.buttons {
+	height :320px;
+}
+.buttons_inner {
+	width:383px;
+	height:222px;
+	margin-left:408px;
+	margin-top :60px;
+}
+.buttons_inner p{
+	width:384px;
+	height:65px;
+	border:1px solid #ccc;
+	border-radius:50px;
+	margin-bottom:16px;
+}
+.buttons_red input{
+	width:384px;
+	height:65px;
+	background-color: #E00D32;
+	border:none;
+	color:#fff;
+	font-size:19px;
+	font-weight:bold;
+	border-radius:50px;
+}
+.buttons_line input {
+	display:inline-block;
+	width:185px;
+	height:62px;
+	font-size:16px;
+	border:none;
+	background-color: #fff;
+}
+.buttons_line img {
+	display:inline-block;
+	margin-left:80px;
+	position: relative;
+	top: 10px
 }
 .guide {
 	height:64px;

@@ -23,7 +23,7 @@ REVISION DESC :
 */
 
 // 로그인 기능
-function login(e, cb) {
+function login(e) {
   e.preventDefault();
   localStorage.setItem("isLogin", true);
   // 로그인 성공시 이젠 페이지로 이동
@@ -35,6 +35,7 @@ function logout(e) {
   e.preventDefault();
   localStorage.setItem("isLogin", false);
   checkIsLogin();
+  location.href= `${url}/index.html`;
 }
 
 // 로그인 관련 컴포넌트 상태 변경
