@@ -19,15 +19,17 @@
 			</div>
 			<form>
 				<div class="form_contents">
-					<p><span>ID</span><input type="text" name="id"/></p>
+					<p><span>ID </span><input type="text" name="id"/></p>
 					<p><span>PW</span><input type="password" name="pwd"/></p>
 				</div>
 				<div class="buttons">
-					<p><input type="button" value="로그인하기" name="login" onclick="login()"/></p>
-					<p><img src="images/icons/naver.png" alt="네이버"/>
-						<input type="button" value="네이버로 로그인하기" name="naverlogin" onclick="login()"/></p>
-					<p><img src="images/icons/kakao.png" alt="네이버"/>
-						<input type="button" value="카카오톡으로 로그인하기" name="kalogin" onclick="login()"/></p>
+					<div class="buttons_inner">
+						<p class="buttons_red"><input type="button" value="로그인하기" class="login" onclick="login(event)"></p>
+						<p class="buttons_line"><img src="images/icons/naver.png" alt="네이버"/>
+							<input type="button" value="네이버로 로그인하기" name="naverlogin" onclick=""/></p>
+						<p class="buttons_line"><img src="images/icons/kakao.png" alt="네이버"/>
+							<input type="button" value="카카오톡으로 로그인하기" name="kalogin" onclick=""/></p>
+					</div>
 				</div>
 			</form>
 			<div class="guide">
