@@ -186,7 +186,8 @@ more and moreDetail
 header
 */
 header {
-  height: 215px;
+  /* height: 215px; */
+  height: 202px;
 }
 .header_top{
 	height:100px;
