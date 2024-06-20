@@ -3,22 +3,52 @@
 banner
 */
 main .banner{
-	background: url(../images/banner/banner_kor1.png) no-repeat center / cover;
 	height:500px;
 	width:100%;
-	padding:176px;
-	position:relative;
 }
-.banner .banner_title{
+main .banner.domestic{
+	background: url(../images/banner/banner_kor1.png) no-repeat center / cover;
+}
+main .banner.kangwon{
+	background: url(../images/banner/banner_kor2.png) no-repeat center / cover;
+}
+main .banner.kangneung{
+	background: url(../images/banner/banner_kor3.png) no-repeat center / cover;
+}
+main .banner.abroad{
+	background: url(../images/banner/banner_over1.png) no-repeat center / cover;
+}
+main .banner.asia{
+	background: url(../images/banner/banner_over2.png) no-repeat center / cover;
+}
+main .banner.jpcn{
+	background: url(../images/banner/banner_over3.png) no-repeat center / cover;
+}
+main .banner.china{
+	background: url(../images/banner/banner_over4.png) no-repeat center / cover;
+}
+main .banner.shanghai{
+	background: url(../images/banner/banner_over5.png) no-repeat center / cover;
+}
+
+.banner_wrap{
+	position:relative;
+	width:1200px;
+	height:500px;
+	/* border:1px solid red; */
+	margin:0 auto;
+}
+.banner_wrap_title{
 	width:500px;
 	text-align: center;
 	/* border:1px solid red; */
 	margin:0 auto 30px;
+	padding-top:176px;
 	color:var(--lightWhiteColor);
 	text-shadow: 5px 5px 5px rgba(0,0,0,0.25);
 	font-size:64px;
 }
-.banner .banner_text{
+.banner_wrap_text{
 	width:500px;
 	margin: 0 auto;
 	text-align:center;
@@ -27,7 +57,7 @@ main .banner{
 	text-shadow: 5px 5px 5px rgba(0,0,0,0.25);
 	font-weight:300;
 }
-.banner .banner_shortcut{
+.banner_wrap_shortcut{
 	position:absolute;
 	bottom:25px;
 	border-radius:15px;
@@ -35,20 +65,19 @@ main .banner{
 	height:40px;
 	padding:10px 15px 10px 20px;
 }
-.banner .banner_shortcut li{
+.banner_wrap_shortcut li{
 	float:left;
 }
-.banner .banner_shortcut img{
+.banner_wrap_shortcut img{
 	width:20px;
 	float:left;
 	margin-right:5px;
 }
-.banner .banner_shortcut a{
+.banner_wrap_shortcut a{
 	display:inline-block;
 	color:#fff;
 	font-size:16px;
 	line-height:19px;
-	float:left;
 	margin-right:5px;
 }
 /* contentMain */
