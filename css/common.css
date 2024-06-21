@@ -719,6 +719,9 @@ modal
   background-color: #efefef;
   color: #333;
 }
+.modal .articleInfo .roundedRectangle.like {
+  cursor: pointer;
+}
 .modal .articleInfo .roundedRectangle.like::before {
   background: url(../images/icons/heart.png) no-repeat center/cover;
 }
