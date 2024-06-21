@@ -1,0 +1,51 @@
+.latest_container{
+	width:980px;
+	margin:0 auto;
+}
+.latest_container_title{
+	font-size:30px;
+	font-weight: bold;
+	margin: 60px 0 60px;
+}
+.latest_container_content{
+	height:1363px;
+}
+.latest_container_content tft-card{
+	float:left;
+	margin-right:40px;
+	margin-bottom: 20px;
+}
+.latest_container_content tft-card:nth-child(3n){
+	margin-right:0;
+}
+.latest_container .paging{
+	clear:both;
+	margin: 60px auto;
+	width:275px;
+	height:25px;
+}
+.paging .paging_btn{
+	display:block;
+	width:25px;
+	height:25px;
+	/* border:1px solid red; */
+	float:left;
+}
+.paging .paging_btn a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.paging_btn.btnPrev{
+	background-image: url(../images/icons/pageBtn.png);
+	background-position: 0% 0%;
+	margin-right:30px;
+}
+.paging_btn.btnNext{
+	background-image: url(../images/icons/pageBtn.png);
+	background-position: 100% 0%;
+}
+.paging .paging_number li{
+	float:left;
+	margin-right:30px;
+}
