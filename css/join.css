@@ -36,7 +36,22 @@
 	margin-left: 50px;
 	outline: none;
 	padding-left: 30px;
-	font-size: 22px;
+	font-size: 18px;
+}
+.form_contents_name{
+	width:410px !important;
+}
+.form_contents_confirm{
+	width:150px !important;
+	background-color: #E00D32;
+	color:#fff;
+	font-weight:bold;
+	margin-left:20px !important;
+	padding-left: 0 !important;
+	cursor: pointer;
+}
+.form_contents_confirm:hover{
+	opacity:0.8;
 }
 .form_button {
 	height:180px;
@@ -56,4 +71,7 @@
 	border-radius: 50px;
 	font-weight: bold;
 	font-size: 19px;
+}
+.form_button p a:hover{
+	opacity:0.8;
 }

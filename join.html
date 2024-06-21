@@ -9,6 +9,7 @@
   <script src="json/user.json" ></script>
   <script src="js/jquery-1.12.3.js"></script>
   <script src="js/common.js"></script>
+	<script src="js/join.js"></script>
 	<link rel="icon" href="logo_trift.ico">
 </head>
 <body>
@@ -18,13 +19,16 @@
 		</div>
 		<form>
 			<div class="form_contents">
-				<p><span>ID </span><input type="text" name="id"/></p>
+				<p><span>ID </span>
+					<input type="text" name="id" class="form_contents_name"/>
+					<input type="button" value="중복확인" class="form_contents_confirm" onclick="idVali(this.form)" />
+				</p>
 				<p><span>성명</span><input type="text" name="name"/></p>
 				<p><span>PW</span><input type="password" name="pwd"/></p>
 				<p><span>비밀번호 확인</span><input type="password" name="pwd2"/></p>
 			</div>	
 			<div class="form_button">
-				<p><a href="./index.html">가입하기</a></p>
+				<p><a href="./login.html">가입하기</a></p>
 			</div>
 	</form>
 	</div>
