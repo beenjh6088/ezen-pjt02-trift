@@ -49,7 +49,7 @@ form {
 	font-size:24px;
 }
 .buttons {
-	height :320px;
+	height :340px;
 }
 .buttons_inner {
 	width:383px;
@@ -73,6 +73,10 @@ form {
 	font-size:19px;
 	font-weight:bold;
 	border-radius:50px;
+	cursor: pointer;
+}
+.buttons_red input:hover{
+	opacity:0.8;
 }
 .buttons_line input {
 	display:inline-block;
@@ -81,6 +85,7 @@ form {
 	font-size:16px;
 	border:none;
 	background-color: #fff;
+	cursor: pointer;
 }
 .buttons_line img {
 	display:inline-block;
@@ -90,4 +95,18 @@ form {
 }
 .guide {
 	height:64px;
+	margin-top:30px;
+}
+.guide p{
+	font-size: 14px;
+	text-align: center;
+	margin-top:10px;
+}
+.guide p a{
+	color: red;
+	border-bottom:1px solid red;
+	font-weight: bold;
+}
+.guide p a:hover {
+	opacity: 0.6;
 }

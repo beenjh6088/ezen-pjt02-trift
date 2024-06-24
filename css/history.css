@@ -53,9 +53,6 @@ latest
 record
 */
 .record {
-    margin-bottom: 100px;
-  }
-.record {
     width: 100%;
     height: 1219px;
     /* border-bottom: 1px dashed red; */
@@ -92,8 +89,8 @@ history_record (내 여행 기록 페이지)
     margin-right: 0;
 }
 
-/* tabmenu_paging */
-.tabmenu .paging{
+/* paging */
+.paging{
 	clear:both;
 	margin: 60px auto;
 	width:275px;

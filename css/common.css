@@ -186,7 +186,8 @@ more and moreDetail
 header
 */
 header {
-  height: 215px;
+  /* height: 215px; */
+  height: 202px;
 }
 .header_top{
 	height:100px;
@@ -714,6 +715,9 @@ modal
 .modal .articleInfo .roundedRectangle {
   background-color: #efefef;
   color: #333;
+}
+.modal .articleInfo .roundedRectangle.like {
+  cursor: pointer;
 }
 .modal .articleInfo .roundedRectangle.like::before {
   background: url(../images/icons/heart.png) no-repeat center/cover;

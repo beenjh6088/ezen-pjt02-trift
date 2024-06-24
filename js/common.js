@@ -26,6 +26,10 @@ let userArr = [];
 let url = `${window.location.protocol+"//"+window.location.host+"/"}`;
 let isLogin = false;
 let strangers, members;
+let pick = null;
+let deck = null;
+let index = null;
+const cardDetail = document.querySelector(".modal.cardDetail");
 
 
 // 페이지 로드시 초기화 작업
@@ -221,37 +225,56 @@ function getPageName() {
   return pageName;
 }
 
+
 // Card Detail 모달창 열기
 function oepnCardDetail(event) {
   console.log('callCardDetail')
-  let pick = event.target.closest("tft-card");
-  let deck = pick.parentNode.children;
-  let index = Array.from(deck).indexOf(pick);
-  const cardDetail = document.querySelector(".modal.cardDetail");
+  pick = event.target.closest("tft-card");
+  deck = pick.parentNode.children;
+  index = Array.from(deck).indexOf(pick);
   let title = pick.getAttribute("title");
   let subtitle = pick.getAttribute("subtitle");
   let userName = pick.getAttribute("userName");
-  let likeAmount = pick.getAttribute("likeAmount");
+  let likeAmount = pick.getAttribute("likeAmount") ? parseInt(pick.getAttribute("likeAmount")) : 0;
+  let viewAmount = pick.getAttribute("viewAmount") ? parseInt(pick.getAttribute("viewAmount"))+1 : 1;
   let image = pick.getAttribute("image") ? pick.getAttribute("image") : "";
 
+  console.log(`pick`)
   console.log(pick)
-  // console.log(deck)
-  // console.log(`index : ${index}`)
   
   // deck.forEach((c) => {c.querySelector('.modal').classList.remove("active")});
   // for(let i = 0; i < deck.length; i++) {}
-  console.log(cardDetail)
+
+  // 해당 태그에 속성값으로 조회수 저장
+  pick.setAttribute("viewAmount", viewAmount);
+
   // 모달창으로 데이터 보내기. send data to modal(cardDetail)
   document.querySelector(".title", cardDetail).innerHTML = title;
+  document.querySelector(".roundedRectangle.view", cardDetail).innerHTML = viewAmount;
+  document.querySelector(".roundedRectangle.like", cardDetail).innerHTML = likeAmount;
 
   cardDetail.classList.add("active");
-  
 }
+
 
 // Card Detail 모달창 닫기
 function closeCardDetail() {
   document.querySelector(".modal.cardDetail").classList.remove("active");
 }
+
+
+// Card Detail 좋아요 개수 증가
+function likeCard() {
+  console.log('likeCard');
+  let likeAmount = pick.getAttribute("likeAmount") ? parseInt(pick.getAttribute("likeAmount"))+1 : 1;
+
+  // 해당 태그에 속성값으로 좋아요 개수 저장
+  pick.setAttribute("likeAmount", likeAmount);
+
+  // 모달창에 하트 개수 표시
+  document.querySelector(".roundedRectangle.like", cardDetail).innerHTML = likeAmount;
+}
+
 
 // 더보기창 열기
 function openMoreDetail(moreDetail) {
@@ -269,5 +292,4 @@ function openMoreDetail(moreDetail) {
       moreDetail.classList.remove("active");
     }
   })
-
 }
