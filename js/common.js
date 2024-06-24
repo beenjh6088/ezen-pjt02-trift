@@ -188,24 +188,26 @@ function letsMoveWithMouse() {
 
 // 별로 평점 매기기
 function rateOutOfN() {
+  const rating = document.querySelector(".rating")
+  if(rating.classList.contains("disabled") == true) return;
   const stars = document.querySelectorAll(".star");
   // const ratingValue = document.getElementById("rating-value");
 
   // 특정 위치의 별을 클릭하면 클리한 별의 왼쪽 위치의 별까지 선택
   // 클릭된 별을 클릭하면 원상복귀
   stars.forEach(star => {
-      star.addEventListener("click", function() {
-          // const value = this.getAttribute("data-value");
-          // ratingValue.textContent = value;
+    star.addEventListener("click", function() {
+      // const value = this.getAttribute("data-value");
+      // ratingValue.textContent = value;
 
-          let isSelected = this.classList.contains("selected");
-          clearSelection();
-          if(isSelected == false) {
-            this.classList.add("selected");
-          }
-          // this.nextElementSibling?.classList.add("selected");
-          // this.previousElementSibling?.classList.add("selected");
-      });
+      let isSelected = this.classList.contains("selected");
+      clearSelection();
+      if(isSelected == false) {
+        this.classList.add("selected");
+      }
+      // this.nextElementSibling?.classList.add("selected");
+      // this.previousElementSibling?.classList.add("selected");
+    });
   });
 
   function clearSelection() {
@@ -233,14 +235,29 @@ function oepnCardDetail(event) {
   deck = pick.parentNode.children;
   index = Array.from(deck).indexOf(pick);
   let title = pick.getAttribute("title");
-  let subtitle = pick.getAttribute("subtitle");
   let userName = pick.getAttribute("userName");
   let likeAmount = pick.getAttribute("likeAmount") ? parseInt(pick.getAttribute("likeAmount")) : 0;
   let viewAmount = pick.getAttribute("viewAmount") ? parseInt(pick.getAttribute("viewAmount"))+1 : 1;
+  let spot = pick.getAttribute("spot");
+  let subtitle = pick.getAttribute("subtitle");
   let image = pick.getAttribute("image") ? pick.getAttribute("image") : "";
+  let rating = pick.getAttribute("rating") && isNaN(pick.getAttribute("rating")) == false ? parseInt(pick.getAttribute("rating")) : 0;
+  let tripDate = pick.getAttribute("tripDate");
+  let content = pick.getAttribute("content");
+  let addr = pick.getAttribute("addr");
+  let pics = document.querySelectorAll(`tft-card:nth-child(${index}) .howManyPics`);
+  console.log(pics)
 
-  console.log(`pick`)
-  console.log(pick)
+  // console.log(`pick`)
+  // console.log(pick)
+  // console.log(userName)
+  // console.log(spot)
+  console.log(subtitle)
+  // console.log(image)
+  // console.log(rating)
+  // console.log(tripDate)
+  // console.log(content)
+  // console.log(addr)
   
   // deck.forEach((c) => {c.querySelector('.modal').classList.remove("active")});
   // for(let i = 0; i < deck.length; i++) {}
@@ -252,6 +269,31 @@ function oepnCardDetail(event) {
   document.querySelector(".title", cardDetail).innerHTML = title;
   document.querySelector(".roundedRectangle.view", cardDetail).innerHTML = viewAmount;
   document.querySelector(".roundedRectangle.like", cardDetail).innerHTML = likeAmount;
+  document.querySelector(".articleInfo_writer_name", cardDetail).innerHTML = userName;
+  document.querySelector(".description_info_container_fields_row_input[type=text]", cardDetail).value = addr;
+  document.querySelector(".description_info_container_fields_row_input[type=date]", cardDetail).value = tripDate;
+  // 기존에 있는 색칠된 별 지우기
+  document.querySelectorAll(".star").forEach((s) => {s.classList.remove("selected")})
+  // rating 속성에 저장된 값만큼 selected 해주기
+  document.querySelectorAll(".star").forEach(function(s, idx) {
+    if(s.dataset.value == rating) s.classList.add("selected")
+  })
+  // 시그니처 이미지 세팅
+  document.querySelector(".description_image_container_addButton").style.background = `url(${image}) no-repeat center/cover`
+  document.querySelector(".description_image_container_addButton_addText").style.display = "none";
+  // 장소 세팅
+  document.querySelector(".description_info_container_spot").innerHTML = `<a href='javascript:;'>${spot}</a>`
+  // 내용 세팅
+  document.querySelector(".frmWrite_body_content_textarea").value = content;
+  // 조각 이미지 세팅
+  document.querySelector(".frmWrite_body_file").innerHTML = ""
+  for(let i = 0; i < pics.length; i++) {
+    let img = document.createElement("img");
+    img.classList.add("frmWrite_body_file_picture")
+    img.setAttribute("src", pics[i].value);
+    document.querySelector(".frmWrite_body_file").appendChild(img)
+  }
+
 
   cardDetail.classList.add("active");
 }
@@ -265,14 +307,17 @@ function closeCardDetail() {
 
 // Card Detail 좋아요 개수 증가
 function likeCard() {
-  console.log('likeCard');
+  // console.log('likeCard');
   let likeAmount = pick.getAttribute("likeAmount") ? parseInt(pick.getAttribute("likeAmount"))+1 : 1;
 
   // 해당 태그에 속성값으로 좋아요 개수 저장
   pick.setAttribute("likeAmount", likeAmount);
-
+  
   // 모달창에 하트 개수 표시
   document.querySelector(".roundedRectangle.like", cardDetail).innerHTML = likeAmount;
+
+  // 카드에 하트 개수 표시
+  document.querySelector(`tft-card:nth-child(${index+1}) .cardBottom_heart_cnt`).innerHTML = likeAmount;
 }
 
 

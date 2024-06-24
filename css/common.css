@@ -596,19 +596,19 @@ rating
   width: 180px;
   gap: 10px;
 }
-.star {
+.rating .star {
   display: inline-block;
   width: 15px;
   height: 15px;
   background: url(../images/icons/starE.png) no-repeat;
   cursor: pointer;
 }
-.star:hover,
-.star:hover ~ .star {
+.rating:not(.disabled) .star:hover,
+.rating:not(.disabled) .star:hover ~ .star {
   background: url(../images/icons/starF.png) no-repeat;
 }
-.star.selected,
-.star.selected ~ .star {
+.rating .star.selected,
+.rating .star.selected ~ .star {
   background: url(../images/icons/starF.png) no-repeat;
 }
 
