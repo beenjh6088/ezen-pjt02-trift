@@ -29,29 +29,29 @@ latest
     height: 662px;
     /* border-bottom: 1px dashed red; */
 }
-.latest .latest_container {
+.latest_container {
     width: 100%;
 }
-.latest .latest_container .latest .latest_container_title {
+.latest_container .latest .latest_container_title {
     width: 100%;
 }
-.latest .latest_container_title {
+.latest_container_title {
     padding-top: 102px;
     margin-bottom: 35px;
 }
-.latest .latest_container_title p{
-    
+.latest_container_title p{
     font-size: 30px;
     font-weight: 1000;
     display: inline-block;
+}
+.latest_container_title img {
+    position: relative;
+    top: 7px;
 }
 
   /* 
 record
 */
-.record {
-    margin-bottom: 100px;
-  }
 .record {
     width: 100%;
     height: 1219px;
@@ -66,5 +66,59 @@ record
     font-weight:1000;
     display: inline-block;
 }
+.record_container_title img {
+    position: relative;
+    top: 7px;
+}
 
-/* 화살 아이콘 조정 필요 */
+/*
+history_record (내 여행 기록 페이지)
+*/
+.latest_more {
+    width: 971px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+}
+.card_list > tft-card {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+.card_list > tft-card:nth-child(3n) {
+    margin-right: 0;
+}
+
+/* paging */
+.paging{
+	clear:both;
+	margin: 60px auto;
+	width:275px;
+	height:25px;
+	/* border:1px solid red; */
+}
+.paging .paging_btn{
+	display:block;
+	width:25px;
+	height:25px;
+	/* border:1px solid red; */
+	float:left;
+}
+.paging .paging_btn a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.paging_btn.btnPrev{
+	background-image: url(../images/icons/pageBtn.png);
+	background-position: 0% 0%;
+	margin-right:30px;
+}
+.paging_btn.btnNext{
+	background-image: url(../images/icons/pageBtn.png);
+	background-position: 100% 0%;
+}
+.paging .paging_number li{
+	float:left;
+	margin-right:30px;
+}
