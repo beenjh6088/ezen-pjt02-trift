@@ -49,7 +49,7 @@ latest
     top: 7px;
 }
 
-  /* 
+/* 
 record
 */
 .record {
@@ -121,4 +121,80 @@ history_record (내 여행 기록 페이지)
 .paging .paging_number li{
 	float:left;
 	margin-right:30px;
+}
+
+/* 떠오른 푸터 내리기 */
+/* folder_card */
+.folder_cards {
+    float: left;
+    width: 585px; height: 219px;
+    background-color: var(--lightWhiteColor);
+    border-radius: 18px;
+    border: 1px solid var(--lightGrayColor);
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+.windowThumbnail:nth-of-type(2n) .folder_cards {
+    margin-right : 0;
+}
+.folder_card_img {
+    width: 160px; height: 160px;
+    border-radius: 10px;
+    background-color: #ccc;
+    margin: 30px 40px 0 30px;
+    float: left;
+}
+.folder_card_info {
+    float: left;
+    margin-top: 40px;
+}
+.folder_card_info > span {
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: block;
+    color: var(--basicTextColor);
+}
+.folder_card_info > p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.folder_card_data > li {
+    margin-bottom: 5px;
+}
+.folder_card_data > li:last-child {
+    margin: 0;
+}
+.folder_card_data > li > span {
+    color: var(--mainColor);
+    margin-right: 20px;
+    font-size: 14px;
+}
+.tagIcon {
+    width: 11px; height: 12px;
+    display: inline-block;
+    margin-right: 10px;
+    
+}
+.adressIcon {
+    background-image: url(../../images/icons/tagIcon.png);
+}
+.dateIcon {
+    background-image: url(../../images/icons/tagIcon.png);
+    background-position: -14px;
+}
+.scoreIcon {
+    background-image: url(../../images/icons/tagIcon.png);
+    background-position: -28px;
+}
+.folder_card_rating {
+    height: 15px;
+    display: inline-block;
+    position: relative;
+    right: 5px;
+}
+.folder_card_rating > li {
+    float:left;
+	margin-right:10px;
 }
