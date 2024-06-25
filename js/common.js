@@ -31,7 +31,6 @@ let deck = null;
 let index = null;
 const cardDetail = document.querySelector(".modal.cardDetail");
 
-
 // 페이지 로드시 초기화 작업
 function init() {
   setData();
