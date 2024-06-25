@@ -2,91 +2,102 @@
 stats
 */
 .stats {
-    width: 100%;
-    /* border-bottom: 1px dashed red; */
+	width: 100%;
+	/* border-bottom: 1px dashed red; */
 }
 .lstats .stats_container {
-    width: 100%;
+	width: 100%;
 }
 .stats .latest_container .stats .stats_container_title {
-    width: 100%;
+	width: 100%;
 }
 .stats .stats_container_title {
-    padding-top: 102px;
-    margin-bottom: 35px;
+	padding-top: 102px;
+	margin-bottom: 35px;
 }
 .stats .stats_container_title p{
-    font-size: 30px;
-    font-weight: 1000;
-    display: inline-block;
+	font-size: 30px;
+	font-weight: 1000;
+	display: inline-block;
 }
+.stats_container .chartData {
+	width: 100%;
+	display: flex;
+}
+.stats_container .chartData .canvas_container {
+	/* border: 1px dashed red; */
+	width: 50%;
+	height: 400px;
+}
+
+
 
 /* 
 latest
 */
 .latest {
-    width: 100%;
-    height: 662px;
-    /* border-bottom: 1px dashed red; */
+	width: 100%;
+	height: 662px;
+	/* border-bottom: 1px dashed red; */
 }
 .latest_container {
-    width: 100%;
+	width: 100%;
 }
 .latest_container .latest .latest_container_title {
-    width: 100%;
+	width: 100%;
 }
 .latest_container_title {
-    padding-top: 102px;
-    margin-bottom: 35px;
+	padding-top: 102px;
+	margin-bottom: 35px;
 }
 .latest_container_title p{
-    font-size: 30px;
-    font-weight: 1000;
-    display: inline-block;
+	font-size: 30px;
+	font-weight: 1000;
+	display: inline-block;
 }
 .latest_container_title img {
-    position: relative;
-    top: 7px;
+	position: relative;
+	top: 7px;
 }
 
   /* 
 record
 */
 .record {
-    width: 100%;
-    height: 1219px;
-    /* border-bottom: 1px dashed red; */
+	width: 100%;
+	height: 1219px;
+	/* border-bottom: 1px dashed red; */
 }
 .record_container_title {
-    padding-top:60px;
-    margin-bottom:35px;
+	padding-top:60px;
+	margin-bottom:35px;
 }
 .record_container_title p{
-    font-size:30px;
-    font-weight:1000;
-    display: inline-block;
+	font-size:30px;
+	font-weight:1000;
+	display: inline-block;
 }
 .record_container_title img {
-    position: relative;
-    top: 7px;
+	position: relative;
+	top: 7px;
 }
 
 /*
 history_record (내 여행 기록 페이지)
 */
 .latest_more {
-    width: 971px;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
+	width: 971px;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
 }
 .card_list > tft-card {
-    float: left;
-    margin-right: 40px;
-    margin-bottom: 20px;
+	float: left;
+	margin-right: 40px;
+	margin-bottom: 20px;
 }
 .card_list > tft-card:nth-child(3n) {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 /* paging */

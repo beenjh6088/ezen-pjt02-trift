@@ -87,11 +87,13 @@ function makeEvents() {
   let moreDetail = document.querySelector(".moreDetail");
 
   toggleHoveringOnGnb();
-  letsMoveWithMouse();
-  rateOutOfN();
 
   if(pageName == "write.html"){
     punInOutPictures();
+    rateOutOfN();
+  }else if(pageName == "index.html") {
+    letsMoveWithMouse();
+    rateOutOfN();
   }
   if(moreDetail) {
     openMoreDetail(moreDetail);

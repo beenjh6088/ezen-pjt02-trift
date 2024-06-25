@@ -11,10 +11,13 @@
   <script defer src="js/common.js"></script>
   <script defer src="js/class.js"></script>
   <script defer src="js/login.js"></script>
+  <script defer src="js/history.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 	<link rel="icon" href="logo_trift.ico">
   <script>
     window.onload = function() {
       init();
+      makeCharts();
     }
   </script>
 </head>
@@ -29,9 +32,16 @@
           <div class="stats">
             <div class="stats_container">
               <div class="stats_container_title">
-                <p>내 여행 통계</p>
+                <p>내 여행 통계</p> 
               </div>
-              
+              <div class="chartData">
+                <div class="canvas_container">
+                  <canvas id="doughnut"></canvas>
+                </div>
+                <div class="canvas_container">
+                  <canvas id="line"></canvas>
+                </div>
+              </div>
             </div>
           </div>
 
