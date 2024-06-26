@@ -53,18 +53,18 @@
                 <a href="./history_latest.html"><img src="../../images/icons/chevron-right-big.png" alt="chevron-right"></a>
               </div>
               <div class="cards">
-                <tft-card userName="Tony"         likeAmount="0"      title="메롱ㅎ" subtitle="메롱의 어원" rating="3"></tft-card>
-                <tft-card userName="Ironman"      likeAmount="01"     title="야호ㅎ" subtitle="야호의 기원" rating="2" image="images/banner/banner_kor1.png"></tft-card>
-                <tft-card userName="Anthony"      likeAmount="둘"     title="쩌쩌러" subtitle="쩌쩌러쩌쩌러" rating="3"></tft-card>
-                <tft-card userName="nobinjunh"    likeAmount="03"     title="쪼쪼로" subtitle="쪼쪼로쪼쪼로"image="images/banner/banner_kor2.png"></tft-card>
-                <tft-card userName="boa"          likeAmount="444"      title="아캔두" subtitle="아캔두디스올데잇" rating="5"></tft-card>
-                <tft-card userName="zzozzoro"     likeAmount="5555"     title="디스올" subtitle="아캔두디스올데잇" rating="55"></tft-card>
-                <tft-card userName="cheocheoreo"  likeAmount="6"      title="데이즈" subtitle="아캔두디스올데잇"></tft-card>
-                <tft-card userName="captain"      likeAmount="7"      title="풋잇백" subtitle="make the most out of what you ve been thinking"></tft-card>
-                <tft-card userName="noble"        likeAmount="8"      title="아만다" subtitle="한국어의 아,맞다!는 아만다"></tft-card>
-                <tft-card userName="mavel"        likeAmount="9"      title="시맛따" subtitle="아차차차.."></tft-card>
-                <tft-card userName="Sabin"        likeAmount="10"     title="이쿠조" subtitle="있어있어 할수있어! 좀더 힘을 내 조금만 더 달려가하하아아"></tft-card>
-                <tft-card userName="Henrry"       title="ㅇㅇㅇ" subtitle="he is my friend"></tft-card>
+                <tft-card userName="Tony"         title="메롱ㅎ" subtitle="메롱의 어원" rating="1" spot="국내 강원도 강릉" tripDate="2022-09-06" content="Lorem ipsum dolor sit amet.0000000" addr="Lorem, ipsum dolor.0000"></tft-card> 
+                <tft-card userName="Ironman"      title="야호ㅎ" subtitle="야호의 기원" rating="2" image="images/banner/banner_kor1.png" spot="해외 호주 케언즈" tripDate="2023-03-06" content="Lorem ipsum dolor sit amet.11111111" addr="Lorem, ipsum dolor.111"></tft-card>
+                <tft-card userName="Anthony"      title="쩌쩌러" subtitle="쩌쩌러쩌쩌러" rating="3" spot="해외 일본 오키나와" tripDate="2018-01-26" content="Lorem ipsum dolor sit amet.2222" addr="Lorem, ipsum dolor.222"></tft-card>
+                <tft-card userName="nobinjunh"    title="쪼쪼로" subtitle="쪼쪼로쪼쪼로" image="images/banner/banner_kor2.png" spot="해외 호주 울룰루" tripDate="2024-12-06" content="Lorem ipsum dolor sit amet.333333" addr="Lorem, ipsum dolor.333"></tft-card>
+                <tft-card userName="boa"          title="아캔두" subtitle="아캔두디스올데잇" rating="5" spot="해외 대만 타이페이" tripDate="2016-11-16" content="Lorem ipsum dolor sit amet.444444" addr="Lorem, ipsum dolor.4444"></tft-card>
+                <tft-card userName="zzozzoro"     title="디스올" subtitle="아캔두디스올데잇" rating="5" tripDate="2024-03-06" content="Lorem ipsum dolor sit amet.55555" addr="Lorem, ipsum dolor.5555"></tft-card>
+                <tft-card userName="cheocheoreo"  title="데이즈" subtitle="아캔두디스올데잇" tripDate="2017-05-13" content="Lorem ipsum dolor sit amet.666666" addr="Lorem, ipsum dolor.66"></tft-card>
+                <tft-card userName="captain"      title="풋잇백" subtitle="make the most out of what you ve been thinking" tripDate="2024-03-07" content="Lorem ipsum dolor sit amet.777777" addr="Lorem, ipsum dolor.7777777"></tft-card>
+                <tft-card userName="noble"        title="아만다" subtitle="한국어의 아,맞다!는 아만다" tripDate="2024-03-07" content="Lorem ipsum dolor sit amet.88" addr="Lorem, ipsum dolor888"></tft-card>
+                <tft-card userName="mavel"        title="시맛따" subtitle="아차차차.." tripDate="2024-03-08" content="Lorem ipsum dolor sit amet.999999" addr="Lorem, ipsum dolor.999"></tft-card>
+                <tft-card userName="Sabin"        title="이쿠조" subtitle="있어있어 할수있어! 좀더 힘을 내 조금만 더 달려가하하아아" tripDate="2024-03-09" content="Lorem ipsum dolor sit amet.1010" addr="Lorem, ipsum dolor.1010"></tft-card>
+                <tft-card userName="Henrry"       title="ㅇㅇㅇ" subtitle="he is my friend" tripDate="2024-03-12" content="Lorem ipsum dolor sit amet." content="Lorem ipsum dolor sit amet.1111" addr="Lorem, ipsum dolor.1111"></tft-card>
               </div>
             </div>
           </div>
@@ -94,5 +94,84 @@
     <!-- footer -->
 		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
   </main>
+
+  <div class="modal cardDetail ">
+    <div class="modal_container">
+      <a href="javascript:;" class="close" onclick="closeCardDetail()"><img src="images/icons/closeBtn.png" alt=""></a>
+      <div class="modal_container_contents">
+        <h1 class="title"></h1>
+        <div class="articleInfo">
+          <div class="left">
+            <img class="articleInfo_profileImage"src="/images/icons/accountIcon.png" alt="profileImage">
+            <div class="articleInfo_writer">
+              <p class="articleInfo_writer_name">USERNAME</p>
+              <p class="articleInfo_writer_postingDate">5 DAYS AGO</p>
+            </div>
+          </div>
+          <div class="right">
+            <span class="roundedRectangle like" onclick="likeCard()"></span>
+            <span class="roundedRectangle view"></span>
+            <span class="more" ></span>
+            <div class="moreDetail ">
+              <ul class="moreDetail_list">
+                <li class="moreDetail_list_item"><img src="/images/icons/share.png" alt="share"><span>공유하기</span></li>
+                <li class="moreDetail_list_item"><img src="/images/icons/edit-3.png" alt="edit-3"><span>수정하기</span></li>
+                <li class="moreDetail_list_item"><img src="/images/icons/trash-2.png" alt="trash-2.png"><span>삭제하기</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="frmWrite_head">
+          <div class="description">
+            <div class="description_image">
+              <div class="description_image_container">
+                <div class="description_image_container_addButton button">
+                  <img class="description_image_container_addButton_addText" src="./images/icons/bigPlus.png" alt="bigPlus"></img>
+                  <input type="file" class="description_image_container_addButton_fileDialog">
+                </div>
+              </div>
+            </div>
+            <div class="description_info">
+              <div class="description_info_container">
+                <p class="description_info_container_catg"><span>카테고리</span></p>
+                <p class="description_info_container_spot"><a href="javascript:;">장소를 추가해주세요</a></p>
+                <div class="description_info_container_fields">
+                  <p class="description_info_container_fields_row addr ">
+                    <label class="description_info_container_fields_row_label "><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
+                    <input class="description_info_container_fields_row_input " type="text" placeholder="장소를 추가해주세요" oninput="checkInputs()" disabled>
+                  </p>
+                  <p class="description_info_container_fields_row date">
+                    <label class="description_info_container_fields_row_label "><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label>
+                    <input class="description_info_container_fields_row_input " type="date" oninput="checkInputs()" disabled>
+                  </p>
+                  <p class="description_info_container_fields_row rate">
+                    <label class="description_info_container_fields_row_label"><img src="./images/icons/tagIcon.png" alt="star"><span>평점</span></label>
+                    <span class="rating disabled">
+                      <span class="star " data-value="5"></span>
+                      <span class="star " data-value="4"></span>
+                      <span class="star " data-value="3"></span>
+                      <span class="star " data-value="2"></span>
+                      <span class="star " data-value="1"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // description -->
+        <div class="frmWrite_body">
+          <div class="frmWrite_body_file">
+            <!-- <div class="frmWrite_body_file_picture active" id="frmWrite_body_file_picture"></div> -->
+          </div>
+          <div class="frmWrite_body_content">
+            <label for="frmWrite_body_content_textarea" class="frmWrite_body_content_label "></label>
+            <textarea name="frmWrite_body_content_textarea " class="frmWrite_body_content_textarea" oninput="checkInputs()" placeholder="" disabled></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // modal_container -->
+  </div>
 </body>
 </html>

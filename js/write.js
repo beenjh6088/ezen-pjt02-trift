@@ -208,3 +208,89 @@ document.querySelector("#frmWrite_body_button_record.deactivated").addEventListe
   document.querySelector(".button.deactivated + .frmWrite_body_button_guide") ? document.querySelector(".button.deactivated + .frmWrite_body_button_guide").classList.add("hide") : null;
 })
 
+
+
+// 카드 추가하기
+function addCard(frm) {
+  let addButton = document.querySelector("#frmWrite_body_button_record")
+
+  // 기록하기 버튼이 비활성화되어 있을 경우에는 카드 추가 불가
+  if(addButton.classList.contains("deactivated")) {
+    // return;
+  }
+  let signatureImg = document.querySelector(".description_image_container_signatureImage")
+  let catg = document.querySelector(".description_info_container_catg > span").innerText;
+  let spot = document.querySelector(".description_info_container_spot") ? document.querySelector(".description_info_container_spot").innerText : "";
+  let addr = frm.description_info_container_fields_row_inputAddr.value;
+  let date = frm.description_info_container_fields_row_inputDate.value;
+  let star = document.querySelector(".star.selected") ? parseInt(document.querySelector(".star.selected").getAttribute("data-value")) : 0;
+  let title = frm.frmWrite_body_header_input.value;
+  // NULL or img tag
+  let imgs = document.querySelectorAll(".frmWrite_body_file_picture:not(.active)")
+  let text = frm.frmWrite_body_content_textarea.value;
+
+  console.log(signatureImg)
+  console.log(catg)
+  console.log(spot)
+  console.log(addr)
+  console.log(date)
+  console.log(star)
+  console.log(title)
+  console.log(imgs)
+  console.log(text)
+
+  // card 정보를 담는 객체 생성.
+  let cards = localStorage.getItem("cards") == null ? [] : localStorage.getItem("cards");
+  let tftCard = document.createElement("tft-card");
+  // 시그니처 이미지는 숨긴 자식요소로 세팅.
+  if(signatureImg){
+    let hddSignatureImg = document.createElement("input");
+    hddSignatureImg.setAttribute("type", "hidden");
+    hddSignatureImg.setAttribute("data-class", signatureImg.classList[0]);
+    hddSignatureImg.setAttribute("data-src", signatureImg.getAttribute("src"));
+    hddSignatureImg.setAttribute("data-alt", signatureImg.getAttribute("alt"));
+    tftCard.appendChild(hddSignatureImg);
+  }
+  // 카테고리
+  tftCard.setAttribute("catg", catg);
+  // 장소
+  tftCard.setAttribute("spot", spot);
+  // 주소
+  tftCard.setAttribute("addr", addr);
+  // 날짜
+  tftCard.setAttribute("date", date);
+  // 별점
+  tftCard.setAttribute("star", star);
+  // 제목
+  tftCard.setAttribute("title", title);
+  // 작은 이미지들 숨긴 자식요소로 세팅.
+  if(imgs) {
+    imgs.forEach(i => {
+      let hddImgs = document.createElement("input");
+      hddImgs.setAttribute("type", "hidden");
+      hddImgs.setAttribute("data-class", i.classList[0]);
+      hddImgs.setAttribute("data-src", i.getAttribute("src"));
+      hddImgs.setAttribute("data-alt", i.getAttribute("alt"));
+      tftCard.appendChild(hddImgs);
+    });
+  }
+  // 내용
+  if(title.length != 0) {
+    let hddText = document.createElement("input");
+    hddText.setAttribute("type", "hidden");
+    hddText.setAttribute("data-value", text);
+    tftCard.appendChild(hddText);
+  }
+  // 사용자 이름
+  tftCard.setAttribute("userName", "AKIRA");
+
+  // cards 배열에 tftCard 객체 추가
+  cards.push(tftCard);
+
+  // 로컬스토리지에 저장해서 페이지를 이동해도 해당 객체 유지
+  localStorage.setItem("cards", cards)
+
+  console.log(`cards : `);
+  console.log(cards)
+  // console.log(cards)
+}
