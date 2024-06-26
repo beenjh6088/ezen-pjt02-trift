@@ -25,9 +25,27 @@ REVISION DESC :
 // 로그인 기능
 function login(e) {
   e.preventDefault();
-  localStorage.setItem("isLogin", true);
-  // 로그인 성공시 이젠 페이지로 이동
-  history.back();
+
+	let userId=localStorage.getItem("userId").split(",");
+	let password=localStorage.getItem("password").split(",");
+	console.log(userId, password);
+
+	let id = document.getElementById("id");
+	let pwd = document.getElementById("pwd");
+	console.log(id, pwd);
+
+	let index = userId.indexOf(id.value);
+	if (pwd.value == password[index]) {
+		localStorage.setItem("isLogin", true);
+		location.href = "./index.html";
+	} else {
+		alert("id나 비밀번호가 일치하지 않습니다.");
+		localStorage.setItem("isLogin", false);
+
+		id.value = "";
+		pwd.value = "";
+		id.focus();
+	}
 }
 
 // 로그아웃 기능
