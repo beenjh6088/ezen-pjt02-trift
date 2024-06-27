@@ -297,5 +297,4 @@ function addCard(frm) {
   console.log(`cards : `);
   console.log(cards)
   console.log(cards[0])
-  // console.log(cards)
 }
