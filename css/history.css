@@ -212,3 +212,45 @@ history_record (내 여행 기록 페이지)
     float:left;
 	margin-right:10px;
 }
+
+/* 
+기록폴더 상세
+*/
+.record_folder_container{
+	margin-top:70px;
+}
+.record_folder_container_title p{
+	font-size:22px;
+	margin-bottom:25px;
+	font-weight:bold;
+	letter-spacing:-2px;
+}
+.record_folder_container_title h2{
+	font-size:30px;
+	letter-spacing: -2px;
+	display:inline-block;
+	margin-bottom:10px;
+}
+.record_folder_container_title span{
+	font-weight:bold;
+	color:#999;
+	font-size:20px;
+	text-decoration: underline;
+	position:relative;
+	top:-5px;
+	left:5px;
+}
+.record_folder_container_date{
+	font-size:16px;
+	color:var(--mainColor);
+	font-weight:bold;
+	margin-bottom:25px;
+	float:left;
+}
+.record_folder_container_sum{
+	background-color: var(--mainColor);
+	float:right;
+}
+.record_folder_container_sum ul{
+	display:inline-block;
+}
