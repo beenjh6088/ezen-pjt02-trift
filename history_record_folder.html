@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip as a Gift in your life</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/history.css">
+  <script defer src="json/user.json" ></script>
+  <script defer src="js/jquery-1.12.3.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/class.js"></script>
+  <script defer src="js/login.js"></script>
+	<link rel="icon" href="logo_trift.ico">
+  <script>
+    window.onload = function() {
+      init();
+    }
+  </script>
+</head>
+<body>
+    <main id="main">
+        <div class="center">
+            <div class="container">
+                <!-- header -->
+                <header id="header" data-include-file="html/common/header.html" class="includeJs"></header>
+  
+                <!-- 기록 폴더 -->
+                <div class="record_folder">
+                    <div class="record_folder_container">
+                        <div class="record_folder_container_title">
+                            <p>기록 폴더</p>
+                            <h2>강원도 속초 강릉 양양 여행</h2>
+                            <span>편집</span>
+                        </div>
+                        <div class="record_folder_container_date">
+                            <p>yyyy.mm.dd.<span>-</span>mm.dd</p>
+                        </div>
+                        <div class="record_folder_container_sum">
+                            <ul class="record_folder_container_heart">
+                                <li class="folder_heart_icon"><img src="../../images/icons/heartWhite.png" alt="heart"></li>
+                                <li class="folder_heart_cnt">2156</li>
+                            </ul>  
+                            <ul class="record_folder_container_view">
+                                <li class="folder_view_icon"><img src="../../images/icons/eyeWhite.png" alt="view"></li>
+                                <li class="folder_view_cnt">2156</li>
+                            </ul>  
+                        </div>
+                        
+                        <ul class="windowThumbnails">
+                            <li class="windowThumbnail"><div data-include-file="html/common/folder_card.html" class="includeJs"></li>
+                            <li class="windowThumbnail"><div data-include-file="html/common/folder_card.html" class="includeJs"></li>
+                            <li class="windowThumbnail"><div data-include-file="html/common/folder_card.html" class="includeJs"></li>
+                            <li class="windowThumbnail"><div data-include-file="html/common/folder_card.html" class="includeJs"></li>
+                            <li class="windowThumbnail"><div data-include-file="html/common/folder_card.html" class="includeJs"></li>
+                            <li class="windowThumbnail"><div data-include-file="html/common/folder_card.html" class="includeJs"></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // latest -->
+            </div>
+        </div>
+        <!-- footer -->
+        <footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
+    </main>
+  </body>
+  </html>
