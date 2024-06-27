@@ -37,7 +37,7 @@
                     <div class="description_image_container">
                       <div class="description_image_container_addButton button" onclick="openModal()">
                         <img class="description_image_container_addButton_addText" src="./images/icons/bigPlus.png" alt="bigPlus"></img>
-                        <input type="file" class="description_image_container_addButton_fileDialog">
+                        <input type="file" class="description_image_container_addButton_fileDialog" name="description_image_container_addButton_fileDialog">
                       </div>
                     </div>
                   </div>
@@ -48,11 +48,11 @@
                       <div class="description_info_container_fields">
                         <p class="description_info_container_fields_row addr ">
                           <label class="description_info_container_fields_row_label required"><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
-                          <input class="description_info_container_fields_row_input " type="text" placeholder="장소를 추가해주세요" oninput="checkInputs()">
+                          <input class="description_info_container_fields_row_input " type="text" placeholder="장소를 추가해주세요" oninput="checkInputs()" name="description_info_container_fields_row_inputAddr">
                         </p>
                         <p class="description_info_container_fields_row date">
                           <label class="description_info_container_fields_row_label required"><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label>
-                          <input class="description_info_container_fields_row_input " type="date" oninput="checkInputs()">
+                          <input class="description_info_container_fields_row_input " type="date" oninput="checkInputs()" name="description_info_container_fields_row_inputDate">
                         </p>
                         <p class="description_info_container_fields_row rate">
                           <label class="description_info_container_fields_row_label"><img src="./images/icons/tagIcon.png" alt="star"><span>평점</span></label>
@@ -73,21 +73,21 @@
               <div class="frmWrite_body">
                 <div class="frmWrite_body_header">
                   <label for="frmWrite_body_header_input" class="frmWrite_body_header_label required"></label>
-                  <input class="frmWrite_body_header_input" type="text" placeholder="제목을 입력하세요" oninput="checkInputs()">
+                  <input class="frmWrite_body_header_input" type="text" placeholder="제목을 입력하세요" oninput="checkInputs()" name="frmWrite_body_header_input">
                 </div>
                 <div class="frmWrite_body_file">
                   <div class="frmWrite_body_file_picture active" id="frmWrite_body_file_picture">
                     <img class="frmWrite_body_file_picture_img " src="./images/icons/file-plus.png" alt="filePlus">
                     <p class="frmWrite_body_file_picture_text">사진 추가하기</p>
-                    <input type="file" class="frmWrite_body_file_picture_fileDialog">
+                    <input type="file" class="frmWrite_body_file_picture_fileDialog" name="frmWrite_body_file_picture_fileDialog">
                   </div>
                 </div>
                 <div class="frmWrite_body_content">
                   <label for="frmWrite_body_content_textarea" class="frmWrite_body_content_label required"></label>
-                  <textarea name="frmWrite_body_content_textarea required" class="frmWrite_body_content_textarea" oninput="checkInputs()" placeholder="내용을 입력하세요"></textarea>
+                  <textarea name="frmWrite_body_content_textarea" class="frmWrite_body_content_textarea required" oninput="checkInputs()" placeholder="내용을 입력하세요"></textarea>
                 </div>
                 <div class="frmWrite_body_button">
-                  <div class="button deactivated" id="frmWrite_body_button_record">기록하기</div>
+                  <button type="button" class="button deactivated" id="frmWrite_body_button_record" onclick="addCard(this.form)">기록하기</button>
                   <span class="frmWrite_body_button_guide hide">필수 입력사항 : 주소, 날짜, 제목, 내용</span>
                 </div>
               </div>

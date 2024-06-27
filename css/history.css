@@ -136,13 +136,16 @@ history_record (내 여행 기록 페이지)
 
 /* 떠오른 푸터 내리기 */
 /* folder_card */
+.windowThumbnails{
+	width:1200px;
+	height:1000px;
+}
 .folder_cards {
     float: left;
     width: 585px; height: 219px;
     background-color: var(--lightWhiteColor);
     border-radius: 18px;
     border: 1px solid var(--lightGrayColor);
-    display: inline-block;
     margin-right: 30px;
     margin-bottom: 20px;
 }

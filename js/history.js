@@ -54,12 +54,12 @@ function makeCharts() {
           {
             label: '국내', // 데이터셋 레이블
             data: dataDomestic, // 데이터 배열
-            // backgroundColor: '#E00D32', // 그래프 영역 배경색
-            borderColor: '#E00D32', // 선 색상
+            backgroundColor: '#E00D32', // 그래프 영역 배경색
+            // borderColor: '#E00D32', // 선 색상
             borderWidth: 2, // 선 두께
             pointRadius: 4, // 데이터 포인트 반지름
             pointBackgroundColor: '#E00D32', // 데이터 포인트 배경색
-            pointBorderColor: '#E00D32', // 데이터 포인트 테두리 색상
+            // pointBorderColor: '#E00D32', // 데이터 포인트 테두리 색상
             pointHoverRadius: 6, // 호버 시 데이터 포인트 반지름
             // pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)', // 호버 시 데이터 포인트 배경색
             // pointHoverBorderColor: 'rgba(220, 220, 220, 1)', // 호버 시 데이터 포인트 테두리 색상

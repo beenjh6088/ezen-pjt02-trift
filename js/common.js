@@ -91,7 +91,7 @@ function makeEvents() {
   if(pageName == "write.html"){
     punInOutPictures();
     rateOutOfN();
-  }else if(pageName == "index.html") {
+  }else if(pageName == "index.html" || pageName == "history.html") {
     letsMoveWithMouse();
     rateOutOfN();
   }
