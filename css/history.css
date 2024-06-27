@@ -138,7 +138,8 @@ history_record (내 여행 기록 페이지)
 /* folder_card */
 .windowThumbnails{
 	width:1200px;
-	height:1000px;
+	height:800px;
+	margin-top:20px;
 }
 .folder_cards {
     float: left;
@@ -219,6 +220,10 @@ history_record (내 여행 기록 페이지)
 .record_folder_container{
 	margin-top:70px;
 }
+.record_folder_topCont{
+	height:142px;
+	position:relative;
+}
 .record_folder_container_title p{
 	font-size:22px;
 	margin-bottom:25px;
@@ -245,12 +250,34 @@ history_record (내 여행 기록 페이지)
 	color:var(--mainColor);
 	font-weight:bold;
 	margin-bottom:25px;
-	float:left;
 }
 .record_folder_container_sum{
-	background-color: var(--mainColor);
-	float:right;
+	position:absolute;
+	right:0px;
+	top:92px;
 }
 .record_folder_container_sum ul{
+	background-color: var(--mainColor);
 	display:inline-block;
+	margin-left:20px;
+	padding:3px 8px;
+	border-radius: 20px;
+}
+.record_folder_container_sum ul li{
+	display:inline-block;
+	color:var(--lightWhiteColor);
+}
+.record_folder_container_sum ul li img{
+	position:relative;
+	top:1px;
+}
+
+/* 
+다른 사용자 추천
+*/
+.other_folder_container_title p{
+	font-weight:bold;
+	font-size:30px;
+	letter-spacing: -2px;
+	margin-bottom:40px;
 }
