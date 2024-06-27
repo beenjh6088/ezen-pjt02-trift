@@ -241,6 +241,10 @@ function addCard(frm) {
 
   // card 정보를 담는 객체 생성.
   let cards = localStorage.getItem("cards") == null ? [] : localStorage.getItem("cards");
+  if(cards.length > 0) cards = JSON.parse(cards)
+  
+  console.log(`typeof(cards)`)
+  console.log(typeof(cards))
   let tftCard = document.createElement("tft-card");
   // 시그니처 이미지는 숨긴 자식요소로 세팅.
   if(signatureImg){
@@ -288,9 +292,10 @@ function addCard(frm) {
   cards.push(tftCard);
 
   // 로컬스토리지에 저장해서 페이지를 이동해도 해당 객체 유지
-  localStorage.setItem("cards", cards)
+  localStorage.setItem("cards", JSON.stringify(cards))
 
   console.log(`cards : `);
   console.log(cards)
+  console.log(cards[0])
   // console.log(cards)
 }
