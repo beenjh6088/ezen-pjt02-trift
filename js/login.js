@@ -26,8 +26,14 @@ REVISION DESC :
 function login(e) {
   e.preventDefault();
 
-	let userId=localStorage.getItem("userId").split(",");
-	let password=localStorage.getItem("password").split(",");
+	let userId=localStorage.getItem("userId");
+	userId = (userId != null) ? userId.split(",") : [];
+
+	let name2=localStorage.getItem("name2");
+	name2 = (name2 != null) ? name2.split(",") : [];
+
+	let password=localStorage.getItem("password");
+	password = (password != null) ? password.split(",") : [];
 	console.log(userId, password);
 
 	let id = document.getElementById("id");
