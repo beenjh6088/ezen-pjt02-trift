@@ -1,12 +1,15 @@
-
-let userId=localStorage.getItem("userId").split(",");
-let name2=localStorage.getItem("name2").split(",");
-let password=localStorage.getItem("password").split(",");
-
+let userId=localStorage.getItem("userId");
+userId = (userId != null) ? userId.split(",") : [];
+let name2=localStorage.getItem("name2");
+name2 = (name2 != null) ? name2.split(",") : [];
+let password=localStorage.getItem("password");
+password = (password != null) ? password.split(",") : [];
 
 console.log(userId);
 console.log(name2);
 console.log(password);
+
+let checkId = false;
 
 function idvali(frm){
 	if(frm.id.value == ""){
@@ -17,11 +20,13 @@ function idvali(frm){
 
 	var idCheck = userId.indexOf(frm.id.value)
 	if(idCheck == -1){
-		alert("해당 ID로 계속 진행하실 수 있습니다.")
+		alert("해당 ID로 계속 진행하실 수 있습니다.");
+		checkId = true;
 		frm.name1.focus()
 	}else{
 		alert("동일한 id를 가진 회원이 존재합니다.")
 		frm.id.value="";
+		checkId = false;
 		frm.id.focus();
 	}
 }
@@ -34,6 +39,11 @@ function checkData(){
 
 		if(id.value =="") {
 			alert("id가 입력되지 않았습니다.");
+			id.focus();
+			return false;
+		}
+		if(!checkId){
+			alert("id 중복확인을 하지 않았습니다.");
 			id.focus();
 			return false;
 		}
