@@ -31,7 +31,7 @@ class Card extends HTMLElement {
       '/images/banner/banner_main1.png',
       '/images/banner/banner_main2.png'
     ]
-    let signitureImg = this.getAttribute("image") ? this.getAttribute("image") : "/images/common/default.png";
+    let signatureImg = this.getAttribute("signatureImg") ? this.getAttribute("signatureImg") : "/images/common/default.png";
     let catg = this.getAttribute("catg") ? this.getAttribute("catg") : "Enter a category";
     let spot = this.getAttribute("spot") ? this.getAttribute("spot") : "Enger a spot";
     let addr = this.getAttribute("addr") ? this.getAttribute("addr") : "";
@@ -68,8 +68,8 @@ class Card extends HTMLElement {
 
     this.innerHTML = `
       ${hiddens}
-      <div class="card" ondblclick="oepnCardDetail(event);">
-        <div class="cardTop" style="background: url('${signitureImg}') no-repeat;">
+      <div class="card" ondblclick="openCardDetail(event);">
+        <div class="cardTop" style="background: url('${signatureImg}') no-repeat;">
           <div class="cardTop_profile">
             <!-- <a href="#"> -->
               <img class="cardTop_profile_img"src="../../images/icons/accountIcon.png" alt="profileImg">

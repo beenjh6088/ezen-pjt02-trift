@@ -215,7 +215,6 @@ function addCard(frm) {
   let addButton = document.querySelector("#frmWrite_body_button_record")
   let now = new Date();
   let key = `TFT_CARD_${now.getFullYear()}${new String(now.getMonth()+1).padStart(2,"0")}${new String(now.getDate()).padStart(2,"0")}_${new String(now.getHours()).padStart(2,"0")}${new String(now.getMinutes()).padStart(2,"0")}${new String(now.getSeconds()).padStart(2,"0")}_${new String(now.getMilliseconds()).padStart(3,"0")}`
-  console.log(`key : ${key}`)
 
   // 기록하기 버튼이 비활성화되어 있을 경우에는 카드 추가 불가
   if(addButton.classList.contains("deactivated")) {
@@ -235,6 +234,7 @@ function addCard(frm) {
   let cards = localStorage.getItem("cards") == null ? [] : localStorage.getItem("cards");
   if(cards.length > 0) cards = JSON.parse(cards);
   let cardObj = {};
+  // 카드 키
   cardObj["key"] = key;
   
   // 시그니처 이미지는 숨긴 자식요소로 세팅.
@@ -259,18 +259,22 @@ function addCard(frm) {
   cardObj["title"] = title;
   // 작은 이미지들 숨긴 자식요소로 세팅.
   if(imgs) {
+    let imgArr = [];
     imgs.forEach(i => {
       let imgsObj = {};
       imgsObj["data-class"] = i.classList[0];
       imgsObj["data-src"] = i.getAttribute("src");
       imgsObj["data-alt"] = i.getAttribute("alt") || "img";
-      cardObj["imgs"] = imgsObj;
+      imgArr.push(JSON.stringify(imgsObj));
     });
+    cardObj["imgs"] = imgArr;
   }
   // 내용
   if(text.length != 0) cardObj["text"] = text;
   // // 사용자 이름
   cardObj["userName"] = "AKIRA";
+  console.log(`cardObj`)
+  console.log(cardObj)
 
   // cards 배열에 객체 추가
   cards.push(cardObj);

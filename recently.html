@@ -11,10 +11,12 @@
   <script defer src="js/common.js"></script>
   <script defer src="js/class.js"></script>
   <script defer src="js/login.js"></script>
+  <script defer src="js/recently.js"></script>
 	<link rel="icon" href="logo_trift.ico">
   <script>
     window.onload = function() {
       init();
+      renderRecentlyData();
     }
   </script>
 </head>
@@ -30,18 +32,18 @@
             <div class="latest_container">
               <p class="latest_container_title">최근 기록</p>
               <div class="latest_container_content">
-                <tft-card userName="Tony"         likeAmount="0"      title="메롱ㅎ" subtitle="메롱의 어원" rating="3"></tft-card>
-                <tft-card userName="Ironman"      likeAmount="01"     title="야호ㅎ" subtitle="야호의 기원" rating="2" image="images/banner/banner_kor1.png"></tft-card>
+                <!-- <tft-card userName="Tony"         likeAmount="0"      title="메롱ㅎ" subtitle="메롱의 어원" rating="3"></tft-card>
+                <tft-card userName="Ironman"      likeAmount="01"     title="야호ㅎ" subtitle="야호의 기원" rating="2" signatureImg="images/banner/banner_kor1.png"></tft-card>
                 <tft-card userName="Anthony"      likeAmount="둘"     title="쩌쩌러" subtitle="쩌쩌러쩌쩌러" rating="3"></tft-card>
-                <tft-card userName="nobinjunh"    likeAmount="03"     title="쪼쪼로" subtitle="쪼쪼로쪼쪼로"image="images/banner/banner_kor2.png"></tft-card>
+                <tft-card userName="nobinjunh"    likeAmount="03"     title="쪼쪼로" subtitle="쪼쪼로쪼쪼로"image="signatureImg/banner/banner_kor2.png"></tft-card>
                 <tft-card userName="boa"          likeAmount="444"      title="아캔두" subtitle="아캔두디스올데잇" rating="5"></tft-card>
                 <tft-card userName="zzozzoro"     likeAmount="5555"     title="디스올" subtitle="아캔두디스올데잇" rating="55"></tft-card>
                 <tft-card userName="cheocheoreo"  likeAmount="6"      title="데이즈" subtitle="아캔두디스올데잇"></tft-card>
                 <tft-card userName="captain"      likeAmount="7"      title="풋잇백" subtitle="make the most out of what you ve been thinking"></tft-card>
-                <tft-card userName="noble"        likeAmount="8"      title="아만다" subtitle="한국어의 아,맞다!는 아만다"></tft-card>
+                <tft-card userName="noble"        likeAmount="8"      title="아만다" subtitle="한국어의 아,맞다!는 아만다"></tft-card> -->
               </div>
 							<!-- paging -->
-							<div class="paging">
+							<!-- <div class="paging">
 								<span class="paging_btn btnPrev"><a href="/"></a></span>
 								<ul class="paging_number">
 									<li><a href="javascript:;">1</a></li>
@@ -51,7 +53,7 @@
 									<li><a href="javascript:;">5</a></li>
 								</ul>
 								<span class="paging_btn btnNext"><a href="/"></a></span>
-							</div>
+							</div> -->
 							<!-- //paging -->
             </div>
           </div>
@@ -62,5 +64,85 @@
     <!-- footer -->
 		<footer id="footer" data-include-file="html/common/footer.html" class="includeJs"></footer>
   </main>
+
+  <!-- modal cardDetail -->
+  <div class="modal cardDetail ">
+    <div class="modal_container">
+      <a href="javascript:;" class="close" onclick="closeCardDetail()"><img src="images/icons/closeBtn.png" alt=""></a>
+      <div class="modal_container_contents">
+        <h1 class="title"></h1>
+        <div class="articleInfo">
+          <div class="left">
+            <img class="articleInfo_profileImage"src="/images/icons/accountIcon.png" alt="profileImage">
+            <div class="articleInfo_writer">
+              <p class="articleInfo_writer_name">USERNAME</p>
+              <p class="articleInfo_writer_postingDate">5 DAYS AGO</p>
+            </div>
+          </div>
+          <div class="right">
+            <span class="roundedRectangle like" onclick="likeCard()"></span>
+            <span class="roundedRectangle view"></span>
+            <span class="more" ></span>
+            <div class="moreDetail ">
+              <ul class="moreDetail_list">
+                <li class="moreDetail_list_item"><img src="/images/icons/share.png" alt="share"><span>공유하기</span></li>
+                <li class="moreDetail_list_item"><img src="/images/icons/alert-circle.png" alt="alert-circle"><span>신고하기</span></li>
+                <li class="moreDetail_list_item delete" data-value="" onclick="deleteCard(this)"><img src="/images/icons/trash-2.png" alt="trash-2"><span>삭제하기</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="frmWrite_head">
+          <div class="description">
+            <div class="description_image">
+              <div class="description_image_container">
+                <div class="description_image_container_addButton button">
+                  <img class="description_image_container_addButton_addText" src="./images/icons/bigPlus.png" alt="bigPlus"></img>
+                  <input type="file" class="description_image_container_addButton_fileDialog">
+                </div>
+              </div>
+            </div>
+            <div class="description_info">
+              <div class="description_info_container">
+                <p class="description_info_container_catg"><span>카테고리</span></p>
+                <p class="description_info_container_spot"><a href="javascript:;">장소를 추가해주세요</a></p>
+                <div class="description_info_container_fields">
+                  <p class="description_info_container_fields_row addr ">
+                    <label class="description_info_container_fields_row_label "><img src="./images/icons/tagIcon.png" alt="mapPin"><span>주소</span></label>
+                    <input class="description_info_container_fields_row_input " type="text" placeholder="장소를 추가해주세요" oninput="checkInputs()" disabled>
+                  </p>
+                  <p class="description_info_container_fields_row date">
+                    <label class="description_info_container_fields_row_label "><img src="./images/icons/tagIcon.png" alt="calender"><span>날짜</span></label>
+                    <input class="description_info_container_fields_row_input " type="date" oninput="checkInputs()" disabled>
+                  </p>
+                  <p class="description_info_container_fields_row rate">
+                    <label class="description_info_container_fields_row_label"><img src="./images/icons/tagIcon.png" alt="star"><span>평점</span></label>
+                    <span class="rating disabled">
+                      <span class="star " data-value="5"></span>
+                      <span class="star " data-value="4"></span>
+                      <span class="star " data-value="3"></span>
+                      <span class="star " data-value="2"></span>
+                      <span class="star " data-value="1"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // description -->
+        <div class="frmWrite_body">
+          <div class="frmWrite_body_file">
+            <!-- <div class="frmWrite_body_file_picture active" id="frmWrite_body_file_picture"></div> -->
+          </div>
+          <div class="frmWrite_body_content">
+            <label for="frmWrite_body_content_textarea" class="frmWrite_body_content_label "></label>
+            <textarea name="frmWrite_body_content_textarea " class="frmWrite_body_content_textarea" oninput="checkInputs()" placeholder="" disabled></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // modal_container -->
+  </div>
 </body>
 </html>
