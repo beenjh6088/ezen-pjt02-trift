@@ -213,12 +213,10 @@ document.querySelector("#frmWrite_body_button_record.deactivated").addEventListe
 // 카드 추가하기
 function addCard(frm) {
   let addButton = document.querySelector("#frmWrite_body_button_record")
+  let now = new Date();
+  let key = `TFT_CARD_${now.getFullYear()}${new String(now.getMonth()+1).padStart(2,"0")}${new String(now.getDate()).padStart(2,"0")}_${new String(now.getHours()).padStart(2,"0")}${new String(now.getMinutes()).padStart(2,"0")}${new String(now.getSeconds()).padStart(2,"0")}_${new String(now.getMilliseconds()).padStart(3,"0")}`
+  console.log(`key : ${key}`)
 
-  console.log(new Date().toDateString())
-  console.log(new Date().getTime())
-  console.log(new Date().getMilliseconds())
-  console.log(new Date().getUTCMilliseconds())
-  return;
   // 기록하기 버튼이 비활성화되어 있을 경우에는 카드 추가 불가
   if(addButton.classList.contains("deactivated")) {
     return;
@@ -237,6 +235,7 @@ function addCard(frm) {
   let cards = localStorage.getItem("cards") == null ? [] : localStorage.getItem("cards");
   if(cards.length > 0) cards = JSON.parse(cards);
   let cardObj = {};
+  cardObj["key"] = key;
   
   // 시그니처 이미지는 숨긴 자식요소로 세팅.
   if(signatureImg) {
