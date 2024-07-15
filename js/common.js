@@ -322,7 +322,9 @@ function openCardDetail(event) {
 
   // 삭제를 위한 카드 ID를 삭제하기 버튼에 세팅
   let deleteCard = document.querySelector(".moreDetail_list_item.delete")
-  deleteCard.setAttribute("data-value", key)
+  if(deleteCard) {
+    deleteCard.setAttribute("data-value", key)
+  }
   cardDetail.classList.add("active");
 }
 
